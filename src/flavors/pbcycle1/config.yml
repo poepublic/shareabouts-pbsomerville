@@ -351,9 +351,9 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(About)
-    slug: about
-    name: overview
+  - title: _(Overview)
+    slug: overview
+    url: /static/pages/overview.html
     start_page: true
 
   - title: _(More...)

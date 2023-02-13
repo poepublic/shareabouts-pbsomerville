@@ -6,6 +6,7 @@
 
 /* =Global
 -------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
 
 /*
   Colors:
@@ -14,12 +15,53 @@
     #3c91e6
     #02187a
     #fafffd
+*/
 
+html {
+  background-color: #b5df79;
+  background-color: #fa824c;
+  background-color: #3c91e6;
+  background-color: #02187a;
+  background-color: #fafffd;
+}
+
+#site-title a:link, #site-title a:visited {
+  color: #02187a;
+}
+
+#site-header,
+#colophon,
+#ticker,
+#add-place-btn-container {
+  color: #02187a;
+  background-color: #fafffd;
+}
+
+#nav-btn,
+.btn-primary, .btn-primary:visited, .btn-primary:link,
+.list-toggle-btn, .list-toggle-btn:visited, .list-toggle-btn:link {
+  color: #fafffd;
+  background-color: #3c91e6;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus,
+.list-toggle-btn:hover, .list-toggle-btn:active, .list-toggle-btn:focus {
+  color: #fafffd;
+  background-color: #fa824c;
+}
+
+/*
   Fonts:
     Genty
     Agrandir Black
     Open Sans
 */
+
+#site-title {
+  font-family: 'Leckerli One', cursive;
+  font-weight: 400;
+}
 
 /* =Header
 -------------------------------------------------------------- */
