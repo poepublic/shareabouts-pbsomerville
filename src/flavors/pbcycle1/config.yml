@@ -47,23 +47,12 @@ map:
     # Mapbox GL Layers
     # ================
     - type: mapbox
-      style: mapbox://styles/mapbox/streets-v8
+      style: mapbox://styles/poepublic/clcrcb2ne000914p9vcpgs9oz
       accessToken: pk.eyJ1IjoicG9lcHVibGljIiwiYSI6ImNsZTJhaXpjcDA3aHozb21qbm1hdHVvbmUifQ.sLFfLUmV2FFEB5BIZVbE1Q
+      attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>'
       fallback:
-        url: https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-        attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>. Geocoding Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">.'
-
-    # GeoJSON Layers
-    # ==============
-    - url: /static/data/philadelphia.geojson
-      type: json
-      rules:
-        - condition: 'true'
-          style:
-            color: "#444"
-            opacity: 0.6
-            fillOpacity: 0.1
-            weight: 1
+        url: https://api.mapbox.com/styles/v1/poepublic/clcrcb2ne000914p9vcpgs9oz/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicG9lcHVibGljIiwiYSI6ImNpaDZnYXNxZDBiajlzd20yd2ZwZXhkb3QifQ.XYIHS6tfEXqoiyximdmLXg
+        attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>'
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
@@ -190,7 +179,6 @@ place:
   show_map_button_label: _(Show the Map)
   action_text: _(added)
   title: _(Tell us more...)
-  action_text: _(created)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
 
@@ -356,27 +344,6 @@ pages:
     url: /static/pages/overview.html
     start_page: true
 
-  - title: _(More...)
-    pages:
-      - title: _(Why Shareabouts?)
-        slug: why
-        url: /static/pages/why.html
-
-      - title: _(Features)
-        slug: features
-        url: /static/pages/features.html
-
-  - title: _(Links)
-    pages:
-      - title: _(Documentation)
-        external: true
-        url: https://github.com/openplans/shareabouts/tree/master/doc
-      - title: _(Issues)
-        external: true
-        url: https://github.com/openplans/shareabouts/issues
-      - title: _(GitHub)
-        external: true
-        url: https://github.com/openplans/shareabouts
   - title: Filter Places
     slug: filter-type
     pages:
