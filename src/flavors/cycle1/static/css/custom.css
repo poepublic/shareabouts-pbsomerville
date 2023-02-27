@@ -276,6 +276,36 @@ input[name="location_type"][value="arts_and_culture"]:checked + .label-text { co
 input[name="location_type"][value="education"]:checked + .label-text { color: #02187a; background-color: #3c91e6; background-image: url(/static/markers/education-nobg.png); }
 input[name="location_type"][value="other_idea"]:checked + .label-text { color: #02187a; background-color: #fafffd; background-image: url(/static/markers/other_idea-nobg.png); }
 
+/* =Authentication
+-------------------------------------------------------------- */
+
+.user-menu {
+  display: none;
+}
+.or-sign-in {
+  display: none;
+}
+
+.user-menu.authed {
+  display: block;
+}
+
+.user-menu.authed #sign-in-btn::before {
+  content: "Logged in as: ";
+  line-height: 3rem;
+  padding-right: 0.5rem;
+  color: white;
+}
+
+#sign-in-btn:hover {
+  cursor: default;
+}
+
+.sign-in-menu.is-exposed {
+  display: none;
+}
+
+
 /* =Media Queries
 -------------------------------------------------------------- */
 
