@@ -226,6 +226,16 @@ textarea {
   border-width: 2px;
 }
 
+.radio-label-text:hover,
+.checkbox-label-text:hover {
+  border-width: 2px;
+}
+
+:checked + .radio-label-text,
+:checked + .checkbox-label-text {
+  border-width: 2px;
+}
+
 .place-location_type-field .radio-group {
   display: flex;
   flex-direction: row;

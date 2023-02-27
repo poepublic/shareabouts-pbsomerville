@@ -265,7 +265,7 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(Your Email)
+    - prompt: _(Your Email (will NOT be shown on the map))
       type: text
       name: private-submitter_email
       optional: true
@@ -275,6 +275,12 @@ place:
           value: _(Email address)
         - key: size
           value: 30
+    - prompt: _(Check here to join the PB Somerville mailing list to receive updates about the process)
+      type: checkbox
+      name: subscribe
+      attrs:
+        - key: value
+          value: yes
     - prompt: _(Project Idea)
       type: text
       name: idea
@@ -319,6 +325,81 @@ place:
       name: description
       attrs:
         - key: required
+
+    # Demographic information...
+    - prompt: _(What is your gender?)
+      name: private-gender
+      sticky: true
+      type: radiogroup
+      options:
+        - label: _(Female)
+          value: female
+        - label: _(Male)
+          value: male
+        - label: _(Other)
+          value: other
+          other: true
+      attrs:
+        - key: data-demographic-info
+          value: true
+    - prompt: _(What is your age?)
+      name: private-age
+      sticky: true
+      type: number
+      attrs:
+        - key: min
+          value: 0
+        - key: max
+          value: 99
+        - key: data-demographic-info
+          value: true
+    - prompt: _(What is your race or ethnicity?)
+      name: private-race_ethnicity
+      sticky: true
+      type: radiogroup
+      options:
+        - label: _(Asian)
+          value: asian
+        - label: _(Black/African American)
+          value: black_african_american
+        - label: _(Hispanic/Latino)
+          value: hispanic_latino
+        - label: _(White)
+          value: white
+        - label: _(Other)
+          value: other
+          other: true
+      attrs:
+        - key: data-demographic-info
+          value: true
+    - prompt: _(Do you identify as having a disability and/or physical impairment that substantially limits one or more of your major life activities?)
+      name: private-disability
+      sticky: true
+      type: radiogroup
+      options:
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      attrs:
+        - key: data-demographic-info
+          value: true
+    - prompt: _(Describe your housing status in Somerville.)
+      name: private-housing_status
+      sticky: true
+      type: radiogroup
+      options:
+        - label: _(Own)
+          value: homeowner
+        - label: _(Rent)
+          value: renter
+        - label: _(Other)
+          value: other
+          other: true
+      attrs:
+        - key: data-demographic-info
+          value: true
+
 
 survey:
   submission_type: comments
