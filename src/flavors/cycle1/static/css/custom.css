@@ -20,7 +20,7 @@
     #f2f2f2  <-- light neutral gray in the guidebook
 
     #b5df79  <-- green for Parks & Green Spaces
-    #2f2e41  <-- gray for Streets & Sidewalks
+    #ffd614  <-- yellow for Streets & Sidewalks
     #fa824c  <-- orange for Arts & Culture
     #3c91e6  <-- blue for Education
     #fafffd  <-- white for Other
@@ -168,11 +168,15 @@ textarea {
 #site-header,
 #ticker,
 #colophon {
-  box-shadow: none;
+  /* box-shadow: none; */
 }
 
 /* =Pages
 -------------------------------------------------------------- */
+
+#content { z-index: 41; }
+#ticker { z-index: 40; }
+#colophon { z-index: 40; }
 
 #content header {
   border-style: solid;
@@ -267,7 +271,7 @@ input[name="location_type"][value="education"] + .label-text { background-image:
 input[name="location_type"][value="other_idea"] + .label-text { background-image: url(/static/markers/other_idea.png); }
 
 input[name="location_type"][value="parks_and_green_space"]:checked + .label-text { color: #02187a; background-color: #b5df79; background-image: url(/static/markers/parks_and_green_space-nobg.png); }
-input[name="location_type"][value="streets_and_sidewalks"]:checked + .label-text { color: #fafffd; background-color: #2f2e41; background-image: url(/static/markers/streets_and_sidewalks-nobg.png); }
+input[name="location_type"][value="streets_and_sidewalks"]:checked + .label-text { color: #02187a; background-color: #ffd614; background-image: url(/static/markers/streets_and_sidewalks-nobg.png); }
 input[name="location_type"][value="arts_and_culture"]:checked + .label-text { color: #02187a; background-color: #fa824c; background-image: url(/static/markers/arts_and_culture-nobg.png); }
 input[name="location_type"][value="education"]:checked + .label-text { color: #02187a; background-color: #3c91e6; background-image: url(/static/markers/education-nobg.png); }
 input[name="location_type"][value="other_idea"]:checked + .label-text { color: #02187a; background-color: #fafffd; background-image: url(/static/markers/other_idea-nobg.png); }

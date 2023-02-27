@@ -73,16 +73,16 @@ place_types:
       - condition: '"{{location_type}}" === "parks_and_green_space" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
-        # icon:
-        #   iconUrl: /static/markers/dot-0d85e9.png
-        #   iconSize: [17, 18]
-        #   iconAnchor: [9, 9]
-        style:
-          color: '#b5df79'
-          radius: 3
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 1
+        icon:
+          iconUrl: /static/markers/parks_and_green_space-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        # style:
+        #   color: '#b5df79'
+        #   radius: 3
+        #   weight: 1
+        #   opacity: 0.9
+        #   fillOpacity: 1
 
       - condition: '"{{location_type}}" === "parks_and_green_space" && {{layer.focused}} === true'
 
@@ -102,7 +102,7 @@ place_types:
 
         # Display as circles (vectors) when zoomed out
         style:
-          color: '#e5e5e5'
+          color: '#ffd614'
           radius: 3
           weight: 1
           opacity: 0.9
@@ -111,16 +111,16 @@ place_types:
       - condition: '"{{location_type}}" === "streets_and_sidewalks" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
-        # icon:
-        #   iconUrl: /static/markers/dot-0d85e9.png
-        #   iconSize: [17, 18]
-        #   iconAnchor: [9, 9]
-        style:
-          color: '#e5e5e5'
-          radius: 3
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 1
+        icon:
+          iconUrl: /static/markers/streets_and_sidewalks-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        # style:
+        #   color: '#ffd614'
+        #   radius: 3
+        #   weight: 1
+        #   opacity: 0.9
+        #   fillOpacity: 1
 
       - condition: '"{{location_type}}" === "streets_and_sidewalks" && {{layer.focused}} === true'
 
@@ -149,16 +149,16 @@ place_types:
       - condition: '"{{location_type}}" === "arts_and_culture" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
-        # icon:
-        #   iconUrl: /static/markers/dot-0d85e9.png
-        #   iconSize: [17, 18]
-        #   iconAnchor: [9, 9]
-        style:
-          color: '#fa824c'
-          radius: 3
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 1
+        icon:
+          iconUrl: /static/markers/arts_and_culture-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        # style:
+        #   color: '#fa824c'
+        #   radius: 3
+        #   weight: 1
+        #   opacity: 0.9
+        #   fillOpacity: 1
 
       - condition: '"{{location_type}}" === "arts_and_culture" && {{layer.focused}} === true'
 
@@ -187,16 +187,16 @@ place_types:
       - condition: '"{{location_type}}" === "education" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
-        # icon:
-        #   iconUrl: /static/markers/dot-0d85e9.png
-        #   iconSize: [17, 18]
-        #   iconAnchor: [9, 9]
-        style:
-          color: '#3c91e6'
-          radius: 3
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 1
+        icon:
+          iconUrl: /static/markers/education-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        # style:
+        #   color: '#3c91e6'
+        #   radius: 3
+        #   weight: 1
+        #   opacity: 0.9
+        #   fillOpacity: 1
 
       - condition: '"{{location_type}}" === "education" && {{layer.focused}} === true'
 
@@ -225,16 +225,16 @@ place_types:
       - condition: '"{{location_type}}" === "other_idea" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
-        # icon:
-        #   iconUrl: /static/markers/dot-0d85e9.png
-        #   iconSize: [17, 18]
-        #   iconAnchor: [9, 9]
-        style:
-          color: '#fafffd'
-          radius: 3
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 1
+        icon:
+          iconUrl: /static/markers/other_idea-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        # style:
+        #   color: '#fafffd'
+        #   radius: 3
+        #   weight: 1
+        #   opacity: 0.9
+        #   fillOpacity: 1
 
       - condition: '"{{location_type}}" === "other_idea" && {{layer.focused}} === true'
 
