@@ -174,13 +174,13 @@ INSTALLED_APPS = (
     'compressor',
     'django_extensions',
 
+    # Client-specific apps
+    'pbsomerville',
+
     # Project apps
     'sa_web',
     'sa_login',
     'proxy',
-
-    # Client-specific apps
-    'pbsomerville',
 )
 
 # Use a test runner that does not use a database.

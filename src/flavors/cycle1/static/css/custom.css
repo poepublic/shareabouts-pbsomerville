@@ -51,7 +51,8 @@ html {
   background-color: #b5df79;
 }
 
-#content header {
+.page-overview header,
+#content .place-header {
   border-color: #3c91e6;
 }
 
@@ -76,7 +77,7 @@ a.close-btn:hover {
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus,
 .list-toggle-btn:hover, .list-toggle-btn:active, .list-toggle-btn:focus {
   color: #fafffd;
-  background-color: #b5df79;
+  background-color: #fa824c;
 }
 
 label {
@@ -120,6 +121,15 @@ input:focus + .checkbox-label-text {
   box-shadow: none;
 }
 
+.recent-points a {
+  border-bottom-color: #02187a;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.recent-points a:hover {
+  background-color: #fa824c;
+}
+
 /*
   Fonts:
     Genty
@@ -137,7 +147,8 @@ input:focus + .checkbox-label-text {
   font-weight: 400;
 }
 
-#content header {
+.page-overview header,
+#content .place-header {
   text-transform: uppercase;
 }
 
@@ -178,7 +189,8 @@ textarea {
 #ticker { z-index: 40; }
 #colophon { z-index: 40; }
 
-#content header {
+.page-overview header,
+#content .place-header {
   border-style: solid;
   border-width: 2px 0;
   margin: 1rem 0;
