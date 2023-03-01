@@ -186,8 +186,8 @@ textarea {
 -------------------------------------------------------------- */
 
 #content { z-index: 39; }
-#ticker { z-index: 40; }
-#colophon { z-index: 40; }
+#ticker { z-index: 36; }
+#colophon { z-index: 38; }
 
 .page-overview header,
 #content .place-header {
