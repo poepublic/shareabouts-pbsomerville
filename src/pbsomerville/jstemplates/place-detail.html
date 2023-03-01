@@ -9,7 +9,7 @@
         {{> place-detail-promotion-bar }}
 
         <header class="place-header clearfix">
-          <h1>{{#if name }}{{ name }}{{^}}{{>location-string .}}{{/if}}</h1>
+          <h1>{{ idea }}</h1>
           <span class="place-submission-details">
             {{#_}}<strong class="point-submitter">
               {{#if submitter.avatar_url }}
@@ -32,6 +32,13 @@
               in {{ region }}
             {{/if}}{{/_}}
 
+            <span class="idea-location">near
+              {{>location-string .}}
+              {{# if location_name }}
+                ({{ location_name }})
+              {{/if}}
+            </span>
+
             <time datetime="{{ created_datetime }}" class="response-date"><a href="/place/{{ id }}">{{ fromnow created_datetime }}</a></time>
 
             <span class="survey-count">{{ survey_count }} {{ survey_label_by_count }}</span>
@@ -49,12 +56,12 @@
             <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
           </div>
           {{/ attachments }}
-          {{#each_place_item "submitter_name" "name" "location_type"}}
-          <div class="place-item place-item-{{ name }}">
-            <span class="place-label place-label-{{ name }}">{{ label }}</span>
-            <p class="place-value place-value-{{ name }}">{{nlToBr value }}</p>
+
+          <div class="place-item place-item-description">
+            <span class="place-label place-label-description">{{#_}}How this idea will improve Somerville...{{/_}}</span>
+            <p class="place-value place-value-description">{{nlToBr description }}</p>
           </div>
-          {{/each_place_item }}
+
         </section>
 
         {{#if survey_config}}

@@ -215,6 +215,24 @@ textarea {
   height: 10rem;
 }
 
+.idea-location {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+}
+
+.place-submission-details {
+  text-transform: none;
+}
+
+.place-label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
 /* =Forms
 -------------------------------------------------------------- */
 

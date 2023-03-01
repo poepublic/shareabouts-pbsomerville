@@ -64,7 +64,7 @@ map:
 # The values map the place type to map icons (defined below).
 place_types:
   parks_and_green_space:
-    label: _(Parks & Green Space)
+    label: _(Parks & Green Space Idea)
     rules:
       - condition: '"{{location_type}}" === "parks_and_green_space" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -97,7 +97,7 @@ place_types:
           shadowAnchor: [29, 23]
 
   streets_and_sidewalks:
-    label: _(Streets & Sidewalks)
+    label: _(Streets & Sidewalks Idea)
     rules:
       - condition: '"{{location_type}}" === "streets_and_sidewalks" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -130,7 +130,7 @@ place_types:
           shadowAnchor: [29, 23]
 
   arts_and_culture:
-    label: _(Arts & Culture)
+    label: _(Arts & Culture Idea)
     rules:
       - condition: '"{{location_type}}" === "arts_and_culture" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -163,7 +163,7 @@ place_types:
           shadowAnchor: [29, 23]
 
   education:
-    label: _(Education)
+    label: _(Education Idea)
     rules:
       - condition: '"{{location_type}}" === "education" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -196,7 +196,7 @@ place_types:
           shadowAnchor: [29, 23]
 
   other_idea:
-    label: _(Other)
+    label: _(Other Idea)
     rules:
       - condition: '"{{location_type}}" === "other_idea" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
