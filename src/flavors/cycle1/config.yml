@@ -445,10 +445,10 @@ pages:
     url: /static/pages/overview.html
     start_page: true
 
-  - title: Filter Places
+  - title: _(Filter Ideas)
     slug: filter-type
     pages:
-      - title: All
+      - title: _(All Ideas)
         external: true
         url: /filter/all
       - title: _(Parks & Green Space)
