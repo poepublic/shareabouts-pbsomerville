@@ -8,7 +8,7 @@ boto==2.27.0
 raven==6.10.0  # For Sentry error logging
 
 # Templates
-django-jstemplate>=1.3.9
+django-jstemplate>=2.0.1
 django_compressor==2.4.1
 
 # Web interface helpers
