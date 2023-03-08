@@ -9,22 +9,26 @@
   {% if place %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ place.properties.name }}">
+    <meta name="twitter:title" content="{{ place.properties.idea }}">
     <meta name="twitter:description" content="{{ place.properties.description }}">
-    {% with attachment=place.properties.attachments|first %}
-    <meta name="twitter:image:src" content="{{ attachment.file }}">
-    {% endwith %}
+    {% if STATIC_URL.0 == '/' %}
+    <meta name="twitter:image:src" content="{{ request.scheme }}://{{ request.get_host }}{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% else %}
+    <meta name="twitter:image:src" content="{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% endif %}
     {% comment %} TODO: Fill this in when we know if the username is from twitter
       <meta name="twitter:creator" content="place.submitter.username">
     {% endcomment %}
 
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
-    <meta property="og:title" content="{{ place.properties.name }}" />
+    <meta property="og:title" content="{{ place.properties.idea }}" />
     <meta property="og:description" content="{{ place.properties.description }}" />
-    {% with attachment=place.properties.attachments|first %}
-    <meta name="og:image" content="{{ attachment.file }}">
-    {% endwith %}
+    {% if STATIC_URL.0 == '/' %}
+    <meta name="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% else %}
+    <meta name="og:image" content="{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% endif %}
   {% else %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
@@ -34,7 +38,12 @@
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ config.app.title }}" />
-    <meta property="og:description" content="{{ config.app.meta_description }}" />
+    <meta property="og:description" content="{{ config.app.og_description }}" />
+    {% if STATIC_URL.0 == '/' %}
+    <meta name="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ STATIC_URL }}css/images/somerville-logo.png">
+    {% else %}
+    <meta name="og:image" content="{{ STATIC_URL }}css/images/somerville-logo.png">
+    {% endif %}
   {% endif%}
 {% endblock %}
 

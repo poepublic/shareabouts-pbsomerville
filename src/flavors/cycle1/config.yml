@@ -5,9 +5,11 @@ app:
   # Header name
   name: PB Somerville
   # Meta description that will show up in Google search results
-  meta_description: _(Submit your ideas for Somerville’s First-Ever Participatory Budgeting initiative.)
+  meta_description: _(Submit your ideas for Somerville’s New Participatory Budgeting Process.)
   # Meta author that will show up in Google search results
   meta_author: City of Somerville
+  # Social descripiton
+  og_description: "_($1,000,000 city budget for your ideas in Somerville. Click here to share what could make our neighborhood even better! #somervillepb)"
 
 
   # When the map loads, existing places will be loaded in chunks. By default,
