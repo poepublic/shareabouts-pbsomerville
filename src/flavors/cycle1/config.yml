@@ -55,11 +55,11 @@ map:
     # Mapbox GL Layers
     # ================
     - type: mapbox
-      style: mapbox://styles/poepublic/clcrcb2ne000914p9vcpgs9oz
+      style: mapbox://styles/poepublic/clf05rgke005h01qgupr9my2s
       accessToken: pk.eyJ1IjoicG9lcHVibGljIiwiYSI6ImNsZTJhaXpjcDA3aHozb21qbm1hdHVvbmUifQ.sLFfLUmV2FFEB5BIZVbE1Q
       attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>'
       fallback:
-        url: https://api.mapbox.com/styles/v1/poepublic/clcrcb2ne000914p9vcpgs9oz/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicG9lcHVibGljIiwiYSI6ImNpaDZnYXNxZDBiajlzd20yd2ZwZXhkb3QifQ.XYIHS6tfEXqoiyximdmLXg
+        url: https://api.mapbox.com/styles/v1/poepublic/clf05rgke005h01qgupr9my2s/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicG9lcHVibGljIiwiYSI6ImNpaDZnYXNxZDBiajlzd20yd2ZwZXhkb3QifQ.XYIHS6tfEXqoiyximdmLXg
         attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>'
 
 # The keys show up in the dropdown list when you are adding a new place
