@@ -293,14 +293,19 @@ place:
       name: location_type
       options:
         - label: _(Parks & Green Space)
+          tooltip: _(such as, play structures, plants and trees, sports equipment)
           value: parks_and_green_space
         - label: _(Streets & Sidewalks)
+          tooltip: _(such as, roadway, sidewalk, crosswalk, or lighting improvements)
           value: streets_and_sidewalks
         - label: _(Arts & Culture)
+          tooltip: _(such as, public art, cultural events, festivals, city beautification projects)
           value: arts_and_culture
         - label: _(Education)
+          tooltip: _(such as, school building improvements, educational programming, enhancing library or school technology and resources)
           value: education
         - label: _(Other)
+          tooltip: _(anything else you can think of!)
           value: other_idea
       attrs:
         - key: required
