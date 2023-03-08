@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-08 17:13-0600\n"
+"POT-Creation-Date: 2023-03-08 17:50-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,46 +19,9 @@ msgstr ""
 
 #: src/pbsomerville/jstemplates/activity-list-item.html:1
 msgid ""
-"<strong>\n"
-"\n"
-"        {{#if target.submitter}}\n"
-"          <img src=\"{{ target.submitter.avatar_url }}\" class=\"avatar\" /> "
-"{{ target.submitter.name }}\n"
-"        {{^}}\n"
-"          {{#if is_place }}\n"
-"            <img src=\"{{ STATIC_URL }}markers/{{ place.location_type }}-dot."
-"png\" class=\"avatar\" /> {{ target.submitter_name }}\n"
-"          {{^}}\n"
-"            <!-- TODO: FIXME: don't hardcode image URL -->\n"
-"            <img src=\"{{ STATIC_URL }}images/user.png\" class=\"avatar\" /> "
-"{{ target.submitter_name }}\n"
-"          {{/if }}\n"
-"        {{/if}}\n"
-"        </strong>\n"
-"\n"
-"        {{#if is_place }}\n"
-"          {{ action }} a{{#if place.type_starts_with_vowel }}n{{/if }} <span "
+"{{ action }} a{{#if place.type_starts_with_vowel }}n{{/if }} <span "
 "class=\"place-type\">{{ place.place_type_label }}</span>\n"
-"          {{#if place.name }}\n"
-"            named <span class=\"place-name\">{{ place.name }}</span>\n"
-"          {{^}}\n"
-"            {{#if place.location }}\n"
-"              at <span class=\"place-name\">{{>location-string place}}</"
-"span>\n"
-"            {{/if }}\n"
-"          {{/if }}\n"
-"        {{else}}\n"
-"          {{ action }}\n"
-"\n"
-"          {{#if place.name }}\n"
-"            <span class=\"place-name\">{{ place.name }}</span>\n"
-"          {{else}}\n"
-"            a{{# place.type_starts_with_vowel }}n{{/ place."
-"type_starts_with_vowel }} {{ place.place_type_label }}\n"
-"          {{/if }}\n"
-"\n"
-"        {{/if }}\n"
-"        "
+"            at <span class=\"place-name\">{{>location-string place}}</span>"
 msgstr ""
 
 #: src/pbsomerville/jstemplates/place-detail-promotion-bar.html:1
@@ -70,94 +33,37 @@ msgid "Tweet This"
 msgstr ""
 
 #: src/pbsomerville/jstemplates/place-detail-survey.html:1
-msgid ""
-"<strong class=\"response-submitter\">\n"
-"                    {{#if submitter}}\n"
-"                      <img src=\"{{ submitter.avatar_url }}\" "
-"class=\"avatar\" /> {{ submitter.name }}\n"
-"                    {{^}}\n"
-"                      <!-- TODO: FIXME: don't hardcode image URL -->\n"
-"                      <img src=\"{{ STATIC_URL }}images/user.png\" "
-"class=\"avatar\" /> {{ submitter_name }}\n"
-"                    {{/if}}\n"
-"                  </strong>\n"
-"                  <span class=\"response-date\">\n"
-"                    around {{ pretty_created_datetime }}\n"
-"                  </span>\n"
-"                  "
+msgid "around {{ pretty_created_datetime }}"
 msgstr ""
 
 #: src/pbsomerville/jstemplates/place-detail.html:1
-msgid ""
-"<strong class=\"point-submitter\">\n"
-"              {{#if submitter.avatar_url }}\n"
-"                <img src=\"{{ submitter.avatar_url }}\" class=\"avatar\" />\n"
-"              {{^}}\n"
-"                <img src=\"{{ STATIC_URL }}markers/{{ location_type }}-dot."
-"png\" class=\"avatar\" />\n"
-"              {{/if}}\n"
-"              {{#if submitter.name }}\n"
-"                {{ submitter.name }}\n"
-"              {{^}}\n"
-"                {{#if submitter_name }}\n"
-"                  {{ submitter_name }}\n"
-"                {{^}}\n"
-"                  {{ anonymous_name }}\n"
-"                {{/if}}\n"
-"              {{/if}}\n"
-"            </strong> {{ action_text }} this {{ place_type_label "
-"location_type}}\n"
-"\n"
-"            {{#if region}}\n"
-"              in {{ region }}\n"
-"            {{/if}}"
-msgstr ""
-
-#: src/pbsomerville/jstemplates/place-detail.html:21
 msgid "How this idea will improve Somerville..."
 msgstr ""
 
-#: src/pbsomerville/jstemplates/place-detail.html:22
+#: src/pbsomerville/jstemplates/place-detail.html:2
 msgid "View On Map"
 msgstr ""
 
-#: src/sa_web/jstemplates/auth-nav.html:1
-#: src/sa_web/jstemplates/place-form.html:3
-msgid "Log Out"
+#: src/pbsomerville/jstemplates/place-detail.html:3
+msgid "supported this {{ place_type_label location_type}}"
 msgstr ""
 
-#: src/sa_web/jstemplates/auth-nav.html:2
-msgid "Sign In"
+#: src/pbsomerville/jstemplates/place-form.html:1
+msgid "Drag the map to your location."
 msgstr ""
 
-#: src/sa_web/jstemplates/auth-nav.html:3
+#: src/pbsomerville/jstemplates/place-form.html:2
 msgid ""
-"Signed in as</span> <span class=\"current-user\">{{ current_user \"name\" }}"
+"It looks like you didn't set your location yet. Please drag the map to your "
+"location."
 msgstr ""
 
 #: src/sa_web/jstemplates/form-field-file.html:1
 msgid "Sorry, your browser doesn't support file uploads."
 msgstr ""
 
-#: src/sa_web/jstemplates/form-field-input.html:1
-msgid ""
-"Or sign in with <a class=\"auth-inline twitter-btn\" href=\"/users/login/"
-"twitter/\">Twitter</a> <a class=\"auth-inline facebook-btn\" href=\"/users/"
-"login/facebook/\">Facebook</a>"
-msgstr ""
-
 #: src/sa_web/jstemplates/form-field-label.html:1
 msgid "optional"
-msgstr ""
-
-#: src/sa_web/jstemplates/place-form.html:1
-msgid "Drag the map to your location."
-msgstr ""
-
-#: src/sa_web/jstemplates/place-form.html:2
-msgid ""
-"It looks like you didn't set your location yet. Please drag the map to your "
-"location."
 msgstr ""
 
 #: src/sa_web/jstemplates/place-list.html:1
