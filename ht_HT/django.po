@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Shareabouts for PB Somerville\n"
+"PO-Revision-Date: 2023-03-09 00:22\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: ht_HT\n"
+
+#, fuzzy
+msgid "<strong>\n\n        {{#if target.submitter}}\n          <img src=\"{{ target.submitter.avatar_url }}\" class=\"avatar\" /> {{ target.submitter.name }}\n        {{^}}\n          {{#if is_place }}\n            <img src=\"{{ STATIC_URL }}markers/{{ place.location_type }}-dot.png\" class=\"avatar\" /> {{ target.submitter_name }}\n          {{^}}\n            <!-- TODO: FIXME: don't hardcode image URL -->\n            <img src=\"{{ STATIC_URL }}images/user.png\" class=\"avatar\" /> {{ target.submitter_name }}\n          {{/if }}\n        {{/if}}\n        </strong>\n\n        {{#if is_place }}\n          {{ action }} a{{#if place.type_starts_with_vowel }}n{{/if }} <span class=\"place-type\">{{ place.place_type_label }}</span>\n          {{#if place.name }}\n            named <span class=\"place-name\">{{ place.name }}</span>\n          {{^}}\n            {{#if place.location }}\n              at <span class=\"place-name\">{{>location-string place}}</span>\n            {{/if }}\n          {{/if }}\n        {{else}}\n          {{ action }}\n\n          {{#if place.name }}\n            <span class=\"place-name\">{{ place.name }}</span>\n          {{else}}\n            a{{# place.type_starts_with_vowel }}n{{/ place.type_starts_with_vowel }} {{ place.place_type_label }}\n          {{/if }}\n\n        {{/if }}\n        "
+msgstr ""
+
+#, fuzzy
+msgid "Recommend on Facebook"
+msgstr ""
+
+#, fuzzy
+msgid "Tweet This"
+msgstr ""
+
+#, fuzzy
+msgid "<strong class=\"response-submitter\">\n                    {{#if submitter}}\n                      <img src=\"{{ submitter.avatar_url }}\" class=\"avatar\" /> {{ submitter.name }}\n                    {{^}}\n                      <!-- TODO: FIXME: don't hardcode image URL -->\n                      <img src=\"{{ STATIC_URL }}images/user.png\" class=\"avatar\" /> {{ submitter_name }}\n                    {{/if}}\n                  </strong>\n                  <span class=\"response-date\">\n                    around {{ pretty_created_datetime }}\n                  </span>\n                  "
+msgstr ""
+
+#, fuzzy
+msgid "<strong class=\"point-submitter\">\n              {{#if submitter.avatar_url }}\n                <img src=\"{{ submitter.avatar_url }}\" class=\"avatar\" />\n              {{^}}\n                <img src=\"{{ STATIC_URL }}markers/{{ location_type }}-dot.png\" class=\"avatar\" />\n              {{/if}}\n              {{#if submitter.name }}\n                {{ submitter.name }}\n              {{^}}\n                {{#if submitter_name }}\n                  {{ submitter_name }}\n                {{^}}\n                  {{ anonymous_name }}\n                {{/if}}\n              {{/if}}\n            </strong> {{ action_text }} this {{ place_type_label location_type}}\n\n            {{#if region}}\n              in {{ region }}\n            {{/if}}"
+msgstr ""
+
+#, fuzzy
+msgid "How this idea will improve Somerville..."
+msgstr ""
+
+#, fuzzy
+msgid "View On Map"
+msgstr ""
+
+#, fuzzy
+msgid "Log Out"
+msgstr ""
+
+#, fuzzy
+msgid "Sign In"
+msgstr ""
+
+#, fuzzy
+msgid "Signed in as</span> <span class=\"current-user\">{{ current_user \"name\" }}"
+msgstr ""
+
+#, fuzzy
+msgid "Sorry, your browser doesn't support file uploads."
+msgstr ""
+
+#, fuzzy
+msgid "Or sign in with <a class=\"auth-inline twitter-btn\" href=\"/users/login/twitter/\">Twitter</a> <a class=\"auth-inline facebook-btn\" href=\"/users/login/facebook/\">Facebook</a>"
+msgstr ""
+
+#, fuzzy
+msgid "optional"
+msgstr ""
+
+#, fuzzy
+msgid "Drag the map to your location."
+msgstr ""
+
+#, fuzzy
+msgid "It looks like you didn't set your location yet. Please drag the map to your location."
+msgstr ""
+
+#, fuzzy
+msgid "Most Recent"
+msgstr ""
+
+#, fuzzy
+msgid "Most {{ support_label_plural }}"
+msgstr ""
+
+#, fuzzy
+msgid "Most {{ survey_label_plural }}"
+msgstr ""
+
+#, fuzzy
+msgid "<span class=\"visibility-icon invisible-icon\">👁</span>\n      This {{ place_config.response_name }} is <strong>only visible to moderators</strong>."
+msgstr ""
+
+#, fuzzy
+msgid "<span class=\"visibility-icon visible-icon\">👁</span>\n      This {{ place_config.response_name }} is <strong>visible to everyone</strong>."
+msgstr ""
+
+#, fuzzy
+msgid "Make {{ place_config.response_name }} hidden"
+msgstr ""
+
+#, fuzzy
+msgid "Make {{ place_config.response_name }} visible"
+msgstr ""
+
+#, fuzzy
+msgid "Thanks for participating!"
+msgstr ""
+
+#, fuzzy
+msgid "Proceed Anyway"
+msgstr ""
+
+#, fuzzy
+msgid "You are using an unsupported browser. Please\n    <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve\n    your experience."
+msgstr ""
+
+#, fuzzy
+msgid "\n        Oops, %(config.app.name)s needs JavaScript to work properly.\n        "
+msgstr ""
+
+#, fuzzy
+msgid "\n        %(config.app.name)s is great but it needs something called JavaScript to work\n        properly. But fear not, it's really easy to turn on. Click\n        <a href=\"http://enable-javascript.com/\" target=\"_blank\">here</a> for simple instructions!\n        "
+msgstr ""
+
+#, fuzzy
+msgid "We can't connect to the server at the moment. Hang tight while we re-establish communication."
+msgstr ""
+
+#, fuzzy
+msgid "Close"
+msgstr ""
