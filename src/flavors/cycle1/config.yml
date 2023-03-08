@@ -279,7 +279,7 @@ place:
           value: 30
     - prompt: _(Check here to join the PB Somerville mailing list to receive updates about the process)
       type: checkbox
-      name: subscribe
+      name: private-subscribe
       attrs:
         - key: value
           value: yes
