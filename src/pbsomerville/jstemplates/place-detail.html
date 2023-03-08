@@ -11,7 +11,7 @@
         <header class="place-header clearfix">
           <h1>{{ idea }}</h1>
           <span class="place-submission-details">
-            {{#_}}<strong class="point-submitter">
+            <strong class="point-submitter">
               {{#if submitter.avatar_url }}
                 <img src="{{ submitter.avatar_url }}" class="avatar" />
               {{^}}
@@ -26,11 +26,7 @@
                   {{ anonymous_name }}
                 {{/if}}
               {{/if}}
-            </strong> {{ action_text }} this {{ place_type_label location_type}}
-
-            {{#if region}}
-              in {{ region }}
-            {{/if}}{{/_}}
+            </strong> {{#_}}supported this {{ place_type_label location_type}}{{/_}}
 
             <span class="idea-location">near
               {{>location-string .}}
