@@ -65,6 +65,39 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
+  community_resources:
+    label: _(Community Resouce Idea)
+    rules:
+      - condition: '"{{location_type}}" === "community_resources" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+
+        # Display as circles (vectors) when zoomed out
+        style:
+          radius: 3
+          color: '#02187a'
+          weight: 1
+          opacity: 0.9
+          fillColor: '#df7c7c'
+          fillOpacity: 1
+
+      - condition: '"{{location_type}}" === "community_resources" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+
+        # Display as icons when zoomed in
+        icon:
+          iconUrl: /static/markers/community_resources-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+
+      - condition: '"{{location_type}}" === "community_resources" && {{layer.focused}} === true'
+
+        # Display as markers when focused
+        icon:
+          iconUrl: /static/markers/community_resources.png
+          shadowUrl: /static/markers/shadow.png
+          iconSize: [50, 60]
+          shadowSize: [58, 25]
+          iconAnchor: [25, 60]
+          shadowAnchor: [29, 23]
+
   parks_and_green_space:
     label: _(Parks & Green Space Idea)
     rules:
@@ -292,6 +325,9 @@ place:
       type: radiogroup
       name: location_type
       options:
+        - label: _(Community Resources)
+          tooltip: _(such as, drinking fountains, public wi-fi, restrooms)
+          value: community_resources
         - label: _(Parks & Green Space)
           tooltip: _(such as, play structures, plants and trees, sports equipment)
           value: parks_and_green_space
@@ -458,6 +494,9 @@ pages:
       - title: _(All Ideas)
         external: true
         url: /filter/all
+      - title: _(Community Resources)
+        url: /filter/community_resources
+        external: true
       - title: _(Parks & Green Space)
         url: /filter/parks_and_green_space
         external: true
