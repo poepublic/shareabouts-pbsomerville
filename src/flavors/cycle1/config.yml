@@ -390,6 +390,7 @@ place:
     - prompt: _(What is your gender?)
       name: private-gender
       sticky: true
+      optional: true
       type: radiogroup
       options:
         - label: _(Female)
@@ -405,6 +406,7 @@ place:
     - prompt: _(What is your age?)
       name: private-age
       sticky: true
+      optional: true
       type: number
       attrs:
         - key: min
@@ -416,6 +418,7 @@ place:
     - prompt: _(What is your race or ethnicity?)
       name: private-race_ethnicity
       sticky: true
+      optional: true
       type: radiogroup
       options:
         - label: _(Asian)
@@ -435,6 +438,7 @@ place:
     - prompt: _(Do you identify as having a disability and/or physical impairment that substantially limits one or more of your major life activities?)
       name: private-disability
       sticky: true
+      optional: true
       type: radiogroup
       options:
         - label: _(Yes)
