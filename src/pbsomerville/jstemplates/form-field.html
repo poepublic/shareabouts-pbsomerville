@@ -1,0 +1,20 @@
+{{#is name 'private-gender'}}
+  {{!--
+    The gender field is the first one in the personal information section. If
+    this changes, then the logic in the form-field-set template will need too.
+  --}}
+
+  <h4>{{#_}}Personal Information{{/_}}</h4>
+  <p><strong>{{#_}}Please tell us a little more about yourself to help
+  us assess whether we are reaching the full diversity of our
+  community.{{/_}}</strong></p>
+{{/is}}
+
+<div class="field {{ type }}-field {{ default submission_type 'place' }}-{{ name }}-field">
+  {{> form-field-label }}
+  {{> form-field-widget }}
+
+  {{#if help_text }}
+  <div class="help-text {{ default submission_type 'place' }}-{{ name }}-help-text">{{ help_text }}</div>
+  {{/if}}
+</div>
