@@ -14,7 +14,18 @@
         {{/if}}
         </strong>
 
-        {{#_}}{{ action }} a{{#if place.type_starts_with_vowel }}n{{/if }} <span class="place-type">{{ place.place_type_label }}</span>
-            at <span class="place-name">{{>location-string place}}</span>{{/_}}
+        {{ action }}
+        {{#is target.city_wide 'true'}}
+          {{#_}}a city-wide{{/_}}
+        {{^}}
+          {{#_}}a{{#if place.type_starts_with_vowel }}n{{/if }}{{/_}}
+        {{/is}}
+
+        <span class="place-type">{{ place.place_type_label }}</span>
+
+        {{#is target.city_wide 'true'}}
+        {{^}}
+          {{#_}}at <span class="place-name">{{>location-string place}}</span>{{/_}}
+        {{/is}}
         </a>
       </li>
