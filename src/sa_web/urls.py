@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
 from sa_login import views as login_views
 
@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^download/(.*).csv$', views.csv_download, name='csv_proxy'),
     url(r'^place/(?P<place_id>[^/]+)$', views.index, name='place'),
     url(r'^login/$', login_views.login, name='login'),
+    url(r'^mailinglist/', include('mailinglist.urls')),
     url(r'^', views.index, name='index'),
 ]

@@ -176,6 +176,7 @@ INSTALLED_APPS = (
 
     # Client-specific apps
     'pbsomerville',
+    'mailinglist',
 
     # Project apps
     'sa_web',
@@ -208,6 +209,11 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'sentry': {
+            'level': 'ERROR',
+            'class': 'raven.handlers.logging.SentryHandler',
+            'dsn': os.environ.get('SENTRY_DSN'),
         }
     },
     'loggers': {
@@ -221,6 +227,10 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
+        'mailinglist': {
+            'handlers': ['console', 'sentry'],
+            'propagate': True,
+        }
     }
 }
 

@@ -12,15 +12,18 @@ Shareabouts.PlaceFormView.prototype.onMailchimpSubscribeChange = function(evt) {
   }
 };
 
-var original_PlaceFormView_onSaveSuccess = Shareabouts.PlaceFormView.prototype.onSaveSuccess;
-Shareabouts.PlaceFormView.prototype.onSaveSuccess = function(model) {
-  original_PlaceFormView_onSaveSuccess.apply(this, arguments);
-  if (model.get('private-subscribe') === true) {
+var mailchimp_original_AppView_viewNewPlace = Shareabouts.AppView.prototype.viewNewPlace;
+Shareabouts.AppView.prototype.viewNewPlace = function() {
+  mailchimp_original_AppView_viewNewPlace.call(this, ...arguments);
+// var original_PlaceFormView_onSaveSuccess = Shareabouts.PlaceFormView.prototype.onSaveSuccess;
+// Shareabouts.PlaceFormView.prototype.onSaveSuccess = function(model) {
+//   original_PlaceFormView_onSaveSuccess.apply(this, arguments);
+  if (this.placeFormView && this.placeFormView.model.get('private-subscribe') === 'true') {
     $.ajax({
-      url: '/mailchimp/subscribe',
+      url: '/mailinglist/subscribe',
       type: 'POST',
       data: {
-        email: model.get('private-submitter_email'),
+        email: this.placeFormView.model.get('private-submitter_email'),
       }
     });
   }

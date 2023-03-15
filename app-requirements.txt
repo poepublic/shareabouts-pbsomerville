@@ -23,3 +23,6 @@ django-extensions==2.1.0
 
 # Testing
 jasmine
+
+# Mailchimp integration
+mailchimp-marketing==3.0.80

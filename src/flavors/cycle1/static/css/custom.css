@@ -453,6 +453,14 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
 }
 
 
+/* =Activity Ticker
+-------------------------------------------------------------- */
+.recent-points a {
+  border-top: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
 /* =Media Queries
 -------------------------------------------------------------- */
 

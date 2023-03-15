@@ -74,9 +74,13 @@ Shareabouts.PlaceFormView.prototype.unsetLatLng = function() {
   this.$('.location-receiver').html(this.options.placeConfig.unset_location_label);
 }
 
-// After the user submits their idea, revert the body back to its original state:
+// After the user submits their idea, revert the body and the place form back
+// to their original states:
 var original_AppView_newPlace = Shareabouts.AppView.prototype.newPlace;
 Shareabouts.AppView.prototype.newPlace = function() {
   $('body').removeAttr('data-city_wide');
-  original_AppView_newPlace.call(this);
+  Shareabouts.PlaceFormView.prototype.setLatLng = original_PlaceFormView_setLatLng;
+  Shareabouts.PlaceFormView.prototype.setLocation = original_PlaceFormView_setLocation;
+
+  original_AppView_newPlace.call(this, ...arguments);
 }
