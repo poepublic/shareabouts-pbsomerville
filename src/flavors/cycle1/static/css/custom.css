@@ -460,6 +460,13 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+/* =Moderation
+-------------------------------------------------------------- */
+
+.place-moderation-bar {
+  margin-bottom: 1.5rem;
+}
+
 
 /* =Media Queries
 -------------------------------------------------------------- */
