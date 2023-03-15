@@ -340,6 +340,12 @@ input[name="location_type"][value="other_idea"]:checked + .label-text { color: #
 /* =City-wide toggle
 -------------------------------------------------------------- */
 
+.drag-marker-instructions {
+  color: #02187a;
+  background-color: #fa824c;
+  text-shadow: none;
+}
+
 .drag-marker-instructions { display: none; }
 .approx-address { display: none; }
 #centerpoint.newpin { display: none; }
