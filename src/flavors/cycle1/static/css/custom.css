@@ -94,6 +94,7 @@ a.close-btn:hover {
 .list-toggle-btn:hover, .list-toggle-btn:active, .list-toggle-btn:focus {
   color: #fafffd;
   background-color: #fa824c;
+  border-color: rgba(0,0,0,0.05);;
 }
 
 label {
