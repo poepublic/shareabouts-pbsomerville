@@ -285,9 +285,10 @@ textarea {
   justify-content: end;
 
   text-transform: none;
-  color: white;
+  text-align: center;
+  /* color: white;
   background-color: #02187a;
-  border-color: #02187a;
+  border-color: #02187a; */
   border-width: 2px;
   background-position: 50% 25%;
   background-repeat: no-repeat;
@@ -318,6 +319,64 @@ input[name="location_type"][value="streets_and_sidewalks"]:checked + .label-text
 input[name="location_type"][value="arts_and_culture"]:checked + .label-text { color: #02187a; background-color: #fa824c; background-image: url(/static/markers/arts_and_culture-nobg.png); }
 input[name="location_type"][value="education"]:checked + .label-text { color: #02187a; background-color: #3c91e6; background-image: url(/static/markers/education-nobg.png); }
 input[name="location_type"][value="other_idea"]:checked + .label-text { color: #02187a; background-color: #fafffd; background-image: url(/static/markers/other_idea-nobg.png); }
+
+
+/* =City-wide toggle
+-------------------------------------------------------------- */
+
+.drag-marker-instructions { display: none; }
+.approx-address { display: none; }
+#centerpoint.newpin { display: none; }
+
+[data-city_wide="false"] .drag-marker-instructions { display: block; }
+[data-city_wide="false"] .approx-address { display: block; }
+[data-city_wide="false"] #centerpoint.newpin { display: inline; }
+
+/* radio buttons */
+.place-city_wide-field label {
+  display: block;
+}
+
+.place-city_wide-field .radio-group {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+
+.place-city_wide-field .radio-group label {
+ margin: 0.25rem;
+}
+
+.radio-group input[name="city_wide"] {
+ width: 1px;
+ height: 1px;
+ opacity: 0;
+ top: 0;
+}
+
+input[name="city_wide"] + .label-text {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: center;
+ padding-top: 4.5rem;
+ width: 10rem;
+ height: 8rem;
+ background-position: center 0.9rem;
+ background-repeat: no-repeat;
+ background-size: 3.8rem 3.6rem;
+ text-align: center;
+}
+
+input[name="city_wide"]:checked + .label-text {
+ background-color: #1b1949;
+}
+
+input[name="city_wide"][value="true"] + .label-text { background-image: url("/static/images/cityhall-light.png"); }
+input[name="city_wide"][value="false"] + .label-text { background-image: url("/static/images/location-light.png"); }
+
+input[name="city_wide"][value="true"]:checked + .label-text { background-image: url("/static/images/cityhall-dark.png"); }
+input[name="city_wide"][value="false"]:checked + .label-text { background-image: url("/static/images/location-dark.png"); }
+
 
 /* =Authentication
 -------------------------------------------------------------- */

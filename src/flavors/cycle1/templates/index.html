@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load static %}
 
 {% block site-title %}
 <a href="/">{{ config.app.name }}</a>
@@ -64,4 +65,8 @@
   Analytics, custom JS, and such go here
  -->
 {% block includes %}
+<script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+<script src="{% static 'js/shareabouts-customizations.js' %}"></script>
+<script src="{% static 'js/mailchimp-subscription.js' %}"></script>
 {% endblock %}

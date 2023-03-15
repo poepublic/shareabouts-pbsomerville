@@ -288,8 +288,23 @@ place:
   submit_button_label: _(Submit)
 
   location_item_name: location
+  city_wide_location_label: _(Multiple locations throughout the city)
+  unset_location_label: _(Drag the map to set the location.)
 
   items:
+    - prompt: _(Is your idea about a specific location or the entire city?)
+      name: city_wide
+      sticky: false
+      optional: false
+      type: radiogroup
+      attrs:
+        - key: required
+          value: true
+      options:
+      - label: _(A specific location)
+        value: no
+      - label: _(City-wide)
+        value: yes
     - prompt: _(Your Name)
       type: text
       name: submitter_name
