@@ -305,32 +305,6 @@ place:
         value: no
       - label: _(City-wide)
         value: yes
-    - prompt: _(Your Name)
-      type: text
-      name: submitter_name
-      optional: true
-      sticky: true
-      attrs:
-        - key: placeholder
-          value: _(Name)
-        - key: size
-          value: 30
-    - prompt: _(Your Email (will NOT be shown on the map))
-      type: text
-      name: private-submitter_email
-      optional: true
-      sticky: true
-      attrs:
-        - key: placeholder
-          value: _(Email address)
-        - key: size
-          value: 30
-    - prompt: _(Check here to join the PB Somerville mailing list to receive updates about the process)
-      type: checkbox
-      name: private-subscribe
-      attrs:
-        - key: value
-          value: yes
     - prompt: _(Project Idea)
       type: text
       name: idea
@@ -383,6 +357,34 @@ place:
       name: description
       attrs:
         - key: required
+
+    # Contact information...
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+      optional: true
+      sticky: true
+      attrs:
+        - key: placeholder
+          value: _(Name)
+        - key: size
+          value: 30
+    - prompt: _(Your Email (will NOT be shown on the map))
+      type: text
+      name: private-submitter_email
+      optional: true
+      sticky: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
+    - prompt: _(Check here to join the PB Somerville mailing list to receive updates about the process)
+      type: checkbox
+      name: private-subscribe
+      attrs:
+        - key: value
+          value: yes
 
     # Demographic information...
     - prompt: _(What is your gender?)
