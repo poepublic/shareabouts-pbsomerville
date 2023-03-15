@@ -57,6 +57,19 @@ html {
   border-color: #3c91e6;
 }
 
+.btn, .btn:visited, .btn:link {
+  background-color: #3c91e6;
+  color: #fafffd;
+  transition: color 0.15s ease-in-out,
+              background-color 0.15s ease-in-out,
+              border-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background: #3c91e6;
+  border-color: #02187a;
+}
+
 a.close-btn {
   color: #3c91e6;
   background-color: #b5df79;
@@ -69,6 +82,7 @@ a.close-btn:hover {
 
 #nav-btn,
 .btn-primary, .btn-primary:visited, .btn-primary:link,
+.btn-secondary, .btn-secondary:visited, .btn-secondary:link,
 .list-toggle-btn, .list-toggle-btn:visited, .list-toggle-btn:link {
   color: #fafffd;
   background-color: #02187a;
@@ -76,6 +90,7 @@ a.close-btn:hover {
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus,
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus,
 .list-toggle-btn:hover, .list-toggle-btn:active, .list-toggle-btn:focus {
   color: #fafffd;
   background-color: #fa824c;
@@ -376,6 +391,24 @@ input[name="city_wide"][value="false"] + .label-text { background-image: url("/s
 
 input[name="city_wide"][value="true"]:checked + .label-text { background-image: url("/static/images/cityhall-dark.png"); }
 input[name="city_wide"][value="false"]:checked + .label-text { background-image: url("/static/images/location-dark.png"); }
+
+
+/* =Promotion
+-------------------------------------------------------------- */
+
+.place-detail .promotion {
+  margin-top: -1rem;
+  padding-left: 1rem;
+  background-color: #b5df79;
+}
+
+.user-support label {
+  color: inherit;
+}
+
+.user-support:hover label {
+  background-color: inherit;
+}
 
 
 /* =Authentication
