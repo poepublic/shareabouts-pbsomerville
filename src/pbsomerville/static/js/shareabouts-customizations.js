@@ -52,8 +52,6 @@ Shareabouts.PlaceFormView.prototype.setCityWideLatLng = function(latLng) {
   const offsetDist = Math.random() * 50;
   const offsetDir = Math.random() * 360;
   const randpt = turf.transformTranslate(pt, offsetDist, offsetDir, {units: 'meters'});
-  this.options.appView.mapView.map.addLayer(L.marker([randpt.geometry.coordinates[1], randpt.geometry.coordinates[0]]));
-  console.log(randpt.geometry.coordinates);
 
   this.setLatLng({lng: randpt.geometry.coordinates[0], lat: randpt.geometry.coordinates[1]});
 
