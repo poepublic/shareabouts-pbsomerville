@@ -393,10 +393,12 @@ place:
       optional: true
       type: radiogroup
       options:
-        - label: _(Female)
-          value: female
-        - label: _(Male)
-          value: male
+        - label: _(Man)
+          value: man
+        - label: _(Woman)
+          value: woman
+        - label: _(Non-binary)
+          value: non-binary
         - label: _(Other)
           value: other
           other: true
@@ -407,27 +409,40 @@ place:
       name: private-age
       sticky: true
       optional: true
-      type: number
+      type: radiogroup
       attrs:
-        - key: min
-          value: 0
-        - key: max
-          value: 99
         - key: data-demographic-info
           value: true
+      options:
+        - label: _(24 or younger)
+          value: 24-or-younger
+        - label: _(25 to 34)
+          value: 25to34
+        - label: _(35 to 44)
+          value: 35to44
+        - label: _(45 to 54)
+          value: 45to54
+        - label: _(55 to 64)
+          value: 55to64
+        - label: _(65 or older)
+          value: 65-or-older
     - prompt: _(What is your race or ethnicity?)
       name: private-race_ethnicity
       sticky: true
       optional: true
       type: radiogroup
       options:
+        - label: _(American Indian/Native American or Alaska Native)
+          value: american_indian_alaska_native
         - label: _(Asian)
           value: asian
         - label: _(Black/African American)
           value: black_african_american
+        - label: _(Native Hawaiian or Other Pacific Islander)
+          value: native_hawaiian_pacific_islander
         - label: _(Hispanic/Latino)
           value: hispanic_latino
-        - label: _(White)
+        - label: _(White/Caucasian)
           value: white
         - label: _(Other)
           value: other
