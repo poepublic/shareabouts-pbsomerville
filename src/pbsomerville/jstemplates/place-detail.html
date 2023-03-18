@@ -26,11 +26,16 @@
                   {{ anonymous_name }}
                 {{/if}}
               {{/if}}
-            </strong> {{#_}}supported this {{ place_type_label location_type}}{{/_}}
+            </strong> {{#_}}added this {{ place_type_label location_type}}{{/_}}
 
-            <span class="idea-location">near
-              {{>location-string .}}
-              {{# if location_name }}
+            <span class="idea-location">
+              {{#is city_wide 'true' }}
+                {{#_}}Throughout the city{{/_}}
+              {{^}}
+                near {{>location-string .}}
+              {{/is}}
+
+              {{#if location_name }}
                 ({{ location_name }})
               {{/if}}
             </span>
