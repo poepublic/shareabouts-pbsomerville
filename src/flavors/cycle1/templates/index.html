@@ -3,7 +3,10 @@
 {% load static %}
 
 {% block site-title %}
-<a href="/">{{ config.app.name }}</a>
+<a href="/">
+  <span class="main-title">{% translate 'Somerville' %}</span>
+  <span class="sub-title">{% translate 'Participatory<br>Budgeting' %}</span>
+</a>
 {% endblock %}
 
 {% block meta %}

@@ -159,6 +159,21 @@ input:focus + .checkbox-label-text {
   font-weight: 900;
 }
 
+#site-title a:link,
+#site-title a:visited {
+  display: flex;
+  gap: 1rem;
+}
+
+#site-title a .main-title,
+#site-title a .main-title {
+  display: block;
+}
+
+#site-title .sub-title {
+  font-size: 0.5em;
+}
+
 #content {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
