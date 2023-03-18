@@ -334,11 +334,6 @@ place:
           value: other_idea
       attrs:
         - key: required
-    - prompt: _(Give one or two words to describe your project)
-      type: text
-      name: short_description
-      attrs:
-        - key: required
     - prompt: _(Project Location Address)
       type: location
       name: address
@@ -355,6 +350,11 @@ place:
     - prompt: _(How will this idea improve Somerville?)
       type: textarea
       name: description
+      attrs:
+        - key: required
+    - prompt: _(Give one or two words to describe your project)
+      type: text
+      name: short_description
       attrs:
         - key: required
 
