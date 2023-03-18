@@ -44,7 +44,7 @@ map:
     zoom: 14
     zoomSnap: 0
     minZoom: 12
-    maxZoom: 18
+    maxZoom: 20
     scrollWheelZoom: false
   layers:
     # Raster Tile Layers
@@ -76,7 +76,7 @@ place_types:
           color: '#02187a'
           weight: 1
           opacity: 0.9
-          fillColor: '#df7c7c'
+          fillColor: '#a379df'
           fillOpacity: 1
 
       - condition: '"{{location_type}}" === "community_resources" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
