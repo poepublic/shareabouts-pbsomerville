@@ -414,8 +414,10 @@ place:
         - key: data-demographic-info
           value: true
       options:
-        - label: _(24 or younger)
-          value: 24-or-younger
+        - label: _(18 or younger)
+          value: 18-or-younger
+        - label: _(19 to 24)
+          value: 19to24
         - label: _(25 to 34)
           value: 25to34
         - label: _(35 to 44)
@@ -426,11 +428,11 @@ place:
           value: 55to64
         - label: _(65 or older)
           value: 65-or-older
-    - prompt: _(What is your race or ethnicity?)
+    - prompt: _(What is your race or ethnicity? Select all that apply.)
       name: private-race_ethnicity
       sticky: true
       optional: true
-      type: radiogroup
+      type: checkboxgroup
       options:
         - label: _(American Indian/Native American or Alaska Native)
           value: american_indian_alaska_native
@@ -440,8 +442,8 @@ place:
           value: black_african_american
         - label: _(Native Hawaiian or Other Pacific Islander)
           value: native_hawaiian_pacific_islander
-        - label: _(Hispanic/Latino)
-          value: hispanic_latino
+        # - label: _(Hispanic/Latino)
+        #   value: hispanic_latino
         - label: _(White/Caucasian)
           value: white
         - label: _(Other)
@@ -548,6 +550,16 @@ pages:
       - title: _(Other)
         url: /filter/other_idea
         external: true
+
+languages:
+  - code: en
+    label: English
+
+  - code: es
+    label: Español
+
+  # - code: zh-hans
+  #   label: 中文
 
 notifications:
   on_new_place: true

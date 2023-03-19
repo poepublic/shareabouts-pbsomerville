@@ -10,6 +10,19 @@
 {% endblock %}
 
 {% block meta %}
+  <link rel="prefetch" href="/static/markers/community_resources-nobg.png">
+  <link rel="prefetch" href="/static/markers/parks_and_green_space-nobg.png">
+  <link rel="prefetch" href="/static/markers/streets_and_sidewalks-nobg.png">
+  <link rel="prefetch" href="/static/markers/arts_and_culture-nobg.png">
+  <link rel="prefetch" href="/static/markers/education-nobg.png">
+  <link rel="prefetch" href="/static/markers/other_idea-nobg.png">
+  <link rel="prefetch" href="/static/markers/community_resources.png">
+  <link rel="prefetch" href="/static/markers/parks_and_green_space.png">
+  <link rel="prefetch" href="/static/markers/streets_and_sidewalks.png">
+  <link rel="prefetch" href="/static/markers/arts_and_culture.png">
+  <link rel="prefetch" href="/static/markers/education.png">
+  <link rel="prefetch" href="/static/markers/other_idea.png">
+
   {% if place %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
@@ -72,4 +85,8 @@
 
 <script src="{% static 'js/shareabouts-customizations.js' %}"></script>
 <script src="{% static 'js/mailchimp-subscription.js' %}"></script>
+
+<!-- Preload site images -->
+<div class="image-preloads">
+</div>
 {% endblock %}

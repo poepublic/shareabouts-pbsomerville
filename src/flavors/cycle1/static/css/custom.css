@@ -303,6 +303,19 @@ textarea {
   border-width: 2px;
 }
 
+/* .radio-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.radio-group label,
+.checkbox-group label {
+  margin-right: 0;
+} */
+
 .place-location_type-field .radio-group {
   display: flex;
   flex-direction: row;
@@ -313,7 +326,7 @@ textarea {
 
 }
 
-.place-location_type-field .label-text {
+.place-location_type-field label .label-text {
   width: 10rem;
   height: 10rem;
   display: flex;
@@ -334,27 +347,29 @@ textarea {
               color 0.15s ease-in-out;
 }
 
-.place-location_type-field .label-text:hover {
+.place-location_type-field label .label-text:hover {
   border-color: #3c91e6;
+  background-color: #a3c7d9;
+  color: #007fbf;
 }
 
-input[name="location_type"]:checked + .label-text {
+[name="location_type"]:checked + .label-text {
   color: #02187a;
 }
 
-input[name="location_type"][value="community_resources"]:checked + .label-text { background-image: url(/static/markers/community_resources-nobg.png); background-color: #a379df; border-color: rgba(0, 0, 0, 0.15); }
-input[name="location_type"][value="parks_and_green_space"]:checked + .label-text { background-image: url(/static/markers/parks_and_green_space-nobg.png); background-color: #b5df79; border-color: rgba(0, 0, 0, 0.15); }
-input[name="location_type"][value="streets_and_sidewalks"]:checked + .label-text { background-image: url(/static/markers/streets_and_sidewalks-nobg.png); background-color: #ffd614; border-color: rgba(0, 0, 0, 0.15); }
-input[name="location_type"][value="arts_and_culture"]:checked + .label-text { background-image: url(/static/markers/arts_and_culture-nobg.png); background-color: #fa824c; border-color: rgba(0, 0, 0, 0.15); }
-input[name="location_type"][value="education"]:checked + .label-text { background-image: url(/static/markers/education-nobg.png); background-color: #3c91e6; border-color: rgba(0, 0, 0, 0.15); }
-input[name="location_type"][value="other_idea"]:checked + .label-text { background-image: url(/static/markers/other_idea-nobg.png); background-color: #fdff97; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="community_resources"]:checked + .label-text { background-image: url(/static/markers/community_resources-nobg.png); background-color: #a379df; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="parks_and_green_space"]:checked + .label-text { background-image: url(/static/markers/parks_and_green_space-nobg.png); background-color: #b5df79; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="streets_and_sidewalks"]:checked + .label-text { background-image: url(/static/markers/streets_and_sidewalks-nobg.png); background-color: #ffd614; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="arts_and_culture"]:checked + .label-text { background-image: url(/static/markers/arts_and_culture-nobg.png); background-color: #fa824c; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="education"]:checked + .label-text { background-image: url(/static/markers/education-nobg.png); background-color: #3c91e6; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="other_idea"]:checked + .label-text { background-image: url(/static/markers/other_idea-nobg.png); background-color: #fdff97; border-color: rgba(0, 0, 0, 0.15); }
 
-input[name="location_type"][value="community_resources"] + .label-text { color: #02187a; background-image: url(/static/markers/community_resources.png); background-color: white; border-color: #02187a; }
-input[name="location_type"][value="parks_and_green_space"] + .label-text { color: #02187a; background-image: url(/static/markers/parks_and_green_space.png); background-color: white; border-color: #02187a; }
-input[name="location_type"][value="streets_and_sidewalks"] + .label-text { color: #02187a; background-image: url(/static/markers/streets_and_sidewalks.png); background-color: white; border-color: #02187a; }
-input[name="location_type"][value="arts_and_culture"] + .label-text { color: #02187a; background-image: url(/static/markers/arts_and_culture.png); background-color: white; border-color: #02187a; }
-input[name="location_type"][value="education"] + .label-text { color: #02187a; background-image: url(/static/markers/education.png); background-color: white; border-color: #02187a; }
-input[name="location_type"][value="other_idea"] + .label-text { color: #02187a; background-image: url(/static/markers/other_idea.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="community_resources"] + .label-text { color: #02187a; background-image: url(/static/markers/community_resources.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="parks_and_green_space"] + .label-text { color: #02187a; background-image: url(/static/markers/parks_and_green_space.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="streets_and_sidewalks"] + .label-text { color: #02187a; background-image: url(/static/markers/streets_and_sidewalks.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="arts_and_culture"] + .label-text { color: #02187a; background-image: url(/static/markers/arts_and_culture.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="education"] + .label-text { color: #02187a; background-image: url(/static/markers/education.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="other_idea"] + .label-text { color: #02187a; background-image: url(/static/markers/other_idea.png); background-color: white; border-color: #02187a; }
 
 
 /* =City-wide toggle
@@ -493,4 +508,31 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
 }
 
 @media only screen and (min-width: 1300px) {
+}
+
+.image-preloads {
+      /* width: 0px;
+      height: 0px;
+      display: inline;
+      background-image: url(/static/markers/community_resources-nobg.png);
+      background-image: url(/static/markers/parks_and_green_space-nobg.png);
+      background-image: url(/static/markers/streets_and_sidewalks-nobg.png);
+      background-image: url(/static/markers/arts_and_culture-nobg.png);
+      background-image: url(/static/markers/education-nobg.png);
+      background-image: url(/static/markers/other_idea-nobg.png);
+      background-image: url(/static/markers/community_resources.png);
+      background-image: url(/static/markers/parks_and_green_space.png);
+      background-image: url(/static/markers/streets_and_sidewalks.png);
+      background-image: url(/static/markers/arts_and_culture.png);
+      background-image: url(/static/markers/education.png);
+      background-image: url(/static/markers/other_idea.png);
+      background-image: url(); */
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
