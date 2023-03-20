@@ -84,3 +84,32 @@ Shareabouts.AppView.prototype.newPlace = function() {
 
   original_AppView_newPlace.call(this, ...arguments);
 }
+
+// Toggle the personal information survey
+Shareabouts.PlaceFormView.prototype.events['change input[name="private-completed_personal_info_survey"]'] = 'onPersonalInfoCompleteChange';
+Shareabouts.PlaceFormView.prototype.onPersonalInfoCompleteChange = function(evt) {
+  if (evt.currentTarget.checked) {
+    this.resetPersonalInformationSurvey(evt.currentTarget.value);
+  }
+}
+
+Shareabouts.PlaceFormView.prototype.resetPersonalInformationSurvey = function(hasCompleted) {
+  // By default, use the personal info completed value from the selected radio
+  // button.
+  if (hasCompleted === undefined) {
+    hasCompleted = this.$('[name="private-completed_personal_info_survey"]:checked').val();
+  }
+
+  // Toggle the visibility of the personal info fields based on the answer.
+  this.$('[data-personal-info]')
+    .closest('.field')
+    .toggleClass('hidden', hasCompleted === 'true');
+}
+
+// Reset the personal information survey when the form is initially rendered.
+var original_PlaceFormView_render = Shareabouts.PlaceFormView.prototype.render;
+Shareabouts.PlaceFormView.prototype.render = function() {
+  const result = original_PlaceFormView_render.call(this, ...arguments);
+  this.resetPersonalInformationSurvey();
+  return result;
+}
