@@ -413,11 +413,9 @@ place:
           value: man
         - label: _(Woman)
           value: woman
-        - label: _(Non-binary)
-          value: non-binary
-        - label: _(Other)
+        - label: _(Non-binary/Other)
           value: other
-          other: true
+          # other: true
       attrs:
         - key: data-personal-info
           value: true
