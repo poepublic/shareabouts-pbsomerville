@@ -456,8 +456,8 @@ place:
           value: black_african_american
         - label: _(Native Hawaiian or Other Pacific Islander)
           value: native_hawaiian_pacific_islander
-        # - label: _(Hispanic/Latino)
-        #   value: hispanic_latino
+        - label: _(Hispanic/Latino)
+          value: hispanic_latino
         - label: _(White/Caucasian)
           value: white
         - label: _(Other)
