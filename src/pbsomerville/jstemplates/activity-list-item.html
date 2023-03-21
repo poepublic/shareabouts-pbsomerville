@@ -15,7 +15,7 @@
         </strong>
 
         {{ action }}
-        {{#is target.city_wide 'true'}}
+        {{#is place.city_wide 'true'}}
           {{#_}}a city-wide{{/_}}
         {{^}}
           {{#_}}a{{#if place.type_starts_with_vowel }}n{{/if }}{{/_}}
