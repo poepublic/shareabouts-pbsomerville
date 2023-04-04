@@ -482,6 +482,7 @@ place:
     - prompt: _(Describe your housing status in Somerville.)
       name: private-housing_status
       sticky: true
+      optional: true
       type: radiogroup
       options:
         - label: _(Own)
