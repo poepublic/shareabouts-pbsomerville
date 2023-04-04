@@ -1,3 +1,14 @@
+Shareabouts for PB Somerville
+=============================
+This is a fork of the [Shareabouts](https://www.github.com/openplans/shareabouts) project, which is a tool for collecting public input on planning and design issues. This fork is intended to be used by the [Participatory Budgeting](http://www.somervillema.gov/pb) process in Somerville, MA.
+
+Customizations:
+- Mailchimp integration
+  - Set the `MAILCHIMP_API_KEY` and `MAILCHIMP_LIST_ID` environment variables to enable Mailchimp integration.
+  - The Mailchimp integration is implemented through a checkbox on the place form. If the checkbox is checked, upon successful submission the user's email address will be added to the Mailchimp list.
+
+----------
+
 Shareabouts [![Build Status](https://secure.travis-ci.org/openplans/shareabouts.png)](http://travis-ci.org/openplans/shareabouts)
 ===========
 
