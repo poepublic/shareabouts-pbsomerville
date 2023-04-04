@@ -7,6 +7,13 @@ Customizations:
   - Set the `MAILCHIMP_API_KEY` and `MAILCHIMP_LIST_ID` environment variables to enable Mailchimp integration.
   - The Mailchimp integration is implemented through a checkbox on the place form. If the checkbox is checked, upon successful submission the user's email address will be added to the Mailchimp list.
 
+Exporting ideas:
+
+```bash
+cd scripts
+USERNAME=... PASSWORD='...' python exportideas.py > exports/ideas-$(date -Idate).csv
+```
+
 ----------
 
 Shareabouts [![Build Status](https://secure.travis-ci.org/openplans/shareabouts.png)](http://travis-ci.org/openplans/shareabouts)

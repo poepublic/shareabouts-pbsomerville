@@ -37,3 +37,6 @@ src/project/config.yml
 
 # sqlite database
 *.db
+
+# Data exports
+scripts/exports/
