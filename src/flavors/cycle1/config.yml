@@ -273,7 +273,7 @@ activity:
 place:
   adding_supported:
     from: '2017-03-07 00:00 -0500'   # Daylight savings begins mid-March
-    until: '2023-05-21 00:00 -0500'  # and ends mid-October.
+    until: '2023-05-21 00:00 -0400'  # and ends mid-October.
   editors: place-editors
   moderators: place-editors
   response_name: _(idea)
@@ -501,7 +501,7 @@ survey:
   submission_type: comments
   adding_supported:
     from: '2017-03-07 00:00 -0500'   # Daylight savings begins mid-March
-    until: '2023-05-21 00:00 -0500'  # and ends mid-October.
+    until: '2023-05-21 00:00 -0400'  # and ends mid-October.
 
   # Response config
   show_responses: true
@@ -532,7 +532,7 @@ support:
   submission_type: support
   adding_supported:
     from: '2017-03-07 00:00 -0500'   # Daylight savings begins mid-March
-    until: '2023-05-21 00:00 -0500'  # and ends mid-October.
+    until: '2023-05-21 00:00 -0400'  # and ends mid-October.
   submit_btn_text: _(Support)
   response_name: _(supporter)
   response_plural_name: _(supporters)
