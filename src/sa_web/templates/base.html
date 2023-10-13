@@ -89,8 +89,6 @@
 
   </header>
 
-  <div class="unsupported-overlay"></div>
-
   <div role="main" id="main">
     <noscript>
       <div class="noscript">
@@ -181,30 +179,6 @@
 
   <script>
     moment.locale('{{LANGUAGE_CODE}}');
-
-    $(function() {
-      // Check official browser support.
-      var userAgent = {{ user_agent_json|safe }};
-
-      if (!Shareabouts.Util.isSupported(userAgent)) {
-        var userAgentData = userAgent,
-            $unsupportedEl = $('.unsupported-overlay'),
-            unsupportedHtml;
-
-        userAgentData['is_ie'] = (userAgent.browser.name === 'Microsoft Internet Explorer');
-        unsupportedHtml = Handlebars.templates['unsupported-overlay'](userAgentData);
-
-        $unsupportedEl.hide()
-        $unsupportedEl.html(unsupportedHtml);
-        $unsupportedEl.slideDown();
-
-        $unsupportedEl.find('.close-btn').click(function(evt) {
-          evt.preventDefault();
-          $unsupportedEl.slideUp();
-          return false;
-        })
-      }
-    });
   </script>
 
   <!-- Bootstrap site and user information -->
@@ -222,9 +196,12 @@
 
     function setApiSessionCookie(data) {
       if (data) {
-        Shareabouts.Util.cookies.save('sa-api-sessionid', data.sessionid);
+        Shareabouts.Util.cookies.save('sa-api-sessionid', data);
       }
     }
+
+    bootstrapCurrentUser({{ api_user|as_json }});
+    setApiSessionCookie({{ api_sessionid|as_json }});
   </script>
 
   {% if settings.DEBUG %}
@@ -246,8 +223,8 @@
   <script src="{% static 'dist/app.js' %}?_={{settings.LAST_DEPLOY_DATE}}"></script>
   {% endif %}
 
-  <script src="{{API_ROOT}}users/current?format=jsonp&callback=bootstrapCurrentUser"></script>
-  <script src="{{API_ROOT}}utils/session-key?format=jsonp&callback=setApiSessionCookie"></script>
+  {% comment %} <script src="{{API_ROOT}}users/current?format=jsonp&callback=bootstrapCurrentUser"></script> {% endcomment %}
+  {% comment %} <script src="{{API_ROOT}}utils/session-key?format=jsonp&callback=setApiSessionCookie"></script> {% endcomment %}
 
   {% handlebarsjs '(.*)' precompile register_partials %}
   {% handlebarsjs 'pages/*' precompile %}
