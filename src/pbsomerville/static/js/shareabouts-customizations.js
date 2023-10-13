@@ -55,8 +55,11 @@ Shareabouts.PlaceFormView.prototype.setCityWideLatLng = function(latLng) {
 
   this.setLatLng({lng: randpt.geometry.coordinates[0], lat: randpt.geometry.coordinates[1]});
 
-  // Update the reverse geocoded label too.
+  // Make it so that any actions that would normally alter the form's latlng
+  // (like moving the map) will have no effect.
   Shareabouts.PlaceFormView.prototype.setLatLng = function() {};
+
+  // Update the reverse geocoded label too.
   Shareabouts.PlaceFormView.prototype.setLocation = cityWide_PlaceFormView_setLocation;
   this.setLocation();
 }

@@ -10,6 +10,13 @@
 
         <header class="place-header clearfix">
           <h1>{{ idea }}</h1>
+
+          {{#if is_on_ballot}}
+          <div class="ballot-announcement">
+            <span>This idea is on the ballot.</span>
+          </div>
+          {{/if}}
+
           <span class="place-submission-details">
             <strong class="point-submitter">
               {{#if submitter.avatar_url }}

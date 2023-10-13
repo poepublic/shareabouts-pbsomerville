@@ -6,9 +6,9 @@
    height="120"
    id="svg2"
    version="1.1"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="marker.svg"
-   inkscape:export-filename="/home/mjumbewu/Code/poepublic/shareabouts-pbsomerville/src/pbsomerville/static/markers/community_resources-dot.png"
+   inkscape:export-filename="../src/pbsomerville/static/markers/ballot.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -1053,6 +1053,25 @@
          id="path40024"
          inkscape:connector-curvature="0" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath21646">
+      <path
+         style="display:inline;fill:#b75ab8;fill-opacity:1;stroke:none;stroke-width:3.4;marker-start:none"
+         d="M 81.819911,81.816198 50.000062,113.636 18.180213,81.816198 a 45.000062,45 0 0 1 0,-63.63961 45.000062,45 0 0 1 63.639698,63.63961 z"
+         id="path21648"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath22153">
+      <circle
+         style="display:inline;fill:#f8e200;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:10.5;stroke-opacity:1"
+         id="circle22155"
+         cx="50"
+         cy="50"
+         r="45" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -1061,11 +1080,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="50"
-     inkscape:cy="59.5"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="55.861436"
+     inkscape:cy="85.383145"
      inkscape:document-units="px"
-     inkscape:current-layer="layer26"
+     inkscape:current-layer="g20550"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -1077,7 +1096,9 @@
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:pagecheckerboard="0"
-     inkscape:snap-global="true" />
+     inkscape:snap-global="true"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -2501,7 +2522,7 @@
      inkscape:groupmode="layer"
      id="g10013"
      inkscape:label="Community Resource Dot"
-     style="display:inline">
+     style="display:none">
     <g
        inkscape:groupmode="layer"
        id="g9989"
@@ -2629,9 +2650,106 @@
   </g>
   <g
      inkscape:groupmode="layer"
+     id="g20569"
+     inkscape:label="Ballot Choice Marker"
+     style="display:inline">
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g20560"
+       id="use20567"
+       style="display:inline"
+       clip-path="url(#clipPath21646)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g20550"
+     inkscape:label="Ballot Choice Dot"
+     style="display:none">
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g20560"
+       id="use20562"
+       style="display:inline"
+       clip-path="url(#clipPath22153)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer27"
+     inkscape:label="Ballot Choice (template)"
+     style="display:none">
+    <g
+       id="g20560"
+       inkscape:label="Ballot Layer">
+      <rect
+         style="display:inline;fill:#ecb607;fill-opacity:0.871696;stroke:none;stroke-width:1.49999;stroke-linecap:round;stroke-linejoin:round"
+         id="rect1043"
+         width="98.5"
+         height="118.5"
+         x="0.75"
+         y="0.75"
+         inkscape:label="fill" />
+      <path
+         sodipodi:type="star"
+         style="fill:#3c91e6;fill-opacity:1;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="path935"
+         inkscape:flatsided="true"
+         sodipodi:sides="6"
+         sodipodi:cx="23.207031"
+         sodipodi:cy="34.863281"
+         sodipodi:r1="39.239315"
+         sodipodi:r2="39.444778"
+         sodipodi:arg1="0.49479428"
+         sodipodi:arg2="1.0183931"
+         inkscape:rounded="0.1"
+         inkscape:randomized="0"
+         d="M 57.740235,53.496094 C 55.876953,56.949414 28.259447,73.973308 24.337144,74.086319 20.41484,74.19933 -8.1370372,58.793815 -10.19606,55.453506 -12.255082,52.113197 -13.189453,19.683789 -11.326172,16.230468 -9.4628908,12.777148 18.154615,-4.2467453 22.076919,-4.3597565 25.999223,-4.4727677 54.5511,10.932747 56.610122,14.273056 c 2.059023,3.340309 2.993394,35.769718 1.130113,39.223038 z"
+         transform="translate(26.490234,40.430664)"
+         inkscape:label="ballot-box" />
+      <path
+         id="path935-6"
+         style="fill:#d0d0d0;fill-opacity:0.200951;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="m 48.566406,36.070312 c -3.9223,0.113012 -31.539064,17.136527 -33.402344,20.589844 -0.167849,0.311084 -0.304067,0.927104 -0.427734,1.666016 0.212535,1.145778 0.44328,1.990047 0.691406,2.392578 2.059021,3.340306 30.610904,18.745824 34.533203,18.632812 3.9223,-0.113011 31.541018,-17.136526 33.404297,-20.589843 0.167425,-0.310297 0.304272,-0.924086 0.427735,-1.660157 -0.212884,-1.149365 -0.444735,-1.995099 -0.69336,-2.398437 C 81.040589,51.362819 52.488706,35.957301 48.566406,36.070312 Z"
+         inkscape:label="ballot-box-top" />
+      <path
+         id="path14105"
+         style="color:#000000;fill:#111111;fill-opacity:0.259719;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+         d="M -10.19911,37.857422 -28.742079,51.353516 -5.359266,64.884766 13.724718,50.994141 C 13.12427,50.590875 12.484829,50.173036 11.787218,49.732422 8.737873,47.806439 4.8436307,45.565527 0.88878087,43.431641 -3.003476,41.331526 -6.9446303,39.341568 -10.19911,37.857422 Z"
+         transform="translate(65.999891)"
+         inkscape:label="ballot-slip-shadow" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 37.04248,50.631836 61.486816,64.790039"
+         id="path8169"
+         sodipodi:nodetypes="cc"
+         inkscape:label="ballot-slit" />
+      <path
+         id="path11954"
+         style="fill:#d6d6d6;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"
+         d="M 60.641547,64.885446 37.258736,51.354196 58.0019,20.694041 81.384711,34.225292 Z"
+         sodipodi:nodetypes="ccccc"
+         inkscape:label="ballot-slip" />
+      <text
+         xml:space="preserve"
+         style="font-weight:600;font-size:32px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';letter-spacing:0px;word-spacing:0px"
+         x="60.811241"
+         y="17.756912"
+         id="text15619"
+         transform="rotate(30.178171)"
+         inkscape:label="check-mark"><tspan
+           sodipodi:role="line"
+           id="tspan15617"
+           x="60.811241"
+           y="17.756912"
+           style="font-size:32px;fill:#468b1a;fill-opacity:1">✓</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="g3144"
      inkscape:label="Dot Outline"
-     style="display:inline">
+     style="display:none">
     <circle
        style="fill:none;fill-opacity:1;stroke:#02187a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:10.5;stroke-opacity:1"
        id="circle3142"
@@ -2641,9 +2759,21 @@
   </g>
   <g
      inkscape:groupmode="layer"
+     id="g22150"
+     inkscape:label="Selected Dot Outline"
+     style="display:none">
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#fcc204;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:10.5;stroke-opacity:1"
+       id="circle22148"
+       cx="50"
+       cy="50"
+       r="47.5" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Marker Outline"
-     style="display:none">
+     style="display:inline">
     <path
        inkscape:connector-curvature="0"
        style="display:inline;fill:#02187a;fill-opacity:1;stroke:none"

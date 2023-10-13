@@ -25,6 +25,7 @@
     #fa824c  <-- orange for Arts & Culture
     #3c91e6  <-- blue for Education
     #fdff97  <-- light yellow for Other
+    #ecb607  <-- gold for ballot ideas
 */
 
 html {
@@ -274,6 +275,24 @@ textarea {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.75rem;
+}
+
+.ballot-announcement {
+  background-image: url(/static/markers/ballot-nobg.png);
+  background-repeat: no-repeat;
+  height: 60px;
+  background-size: 50px 60px;
+  padding-left: 58px;
+  background-color: #ecb607;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: none;
+  font-weight: bold;
+  margin: 1rem 0;
+  border: 3px dashed #02187a;
+  color: #02187a;
+  background-position-y: -4px;
 }
 
 /* =Forms

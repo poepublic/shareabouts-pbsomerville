@@ -79,6 +79,25 @@ place_types:
           fillColor: '#a379df'
           fillOpacity: 1
 
+      - condition: '{{is_on_ballot}} === true && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+
+        # Display as icons when zoomed in
+        icon:
+          iconUrl: /static/markers/ballot-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+
+      - condition: '{{is_on_ballot}} === true && {{layer.focused}} === true'
+
+        # Display as markers when focused
+        icon:
+          iconUrl: /static/markers/ballot.png
+          shadowUrl: /static/markers/shadow.png
+          iconSize: [50, 60]
+          shadowSize: [58, 25]
+          iconAnchor: [25, 60]
+          shadowAnchor: [29, 23]
+
       - condition: '"{{location_type}}" === "community_resources" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
@@ -111,6 +130,25 @@ place_types:
           opacity: 0.9
           fillColor: '#b5df79'
           fillOpacity: 1
+
+      - condition: '{{is_on_ballot}} === true && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+
+        # Display as icons when zoomed in
+        icon:
+          iconUrl: /static/markers/ballot-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+
+      - condition: '{{is_on_ballot}} === true && {{layer.focused}} === true'
+
+        # Display as markers when focused
+        icon:
+          iconUrl: /static/markers/ballot.png
+          shadowUrl: /static/markers/shadow.png
+          iconSize: [50, 60]
+          shadowSize: [58, 25]
+          iconAnchor: [25, 60]
+          shadowAnchor: [29, 23]
 
       - condition: '"{{location_type}}" === "parks_and_green_space" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
@@ -145,6 +183,25 @@ place_types:
           fillColor: '#ffd614'
           fillOpacity: 1
 
+      - condition: '{{is_on_ballot}} === true && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+
+        # Display as icons when zoomed in
+        icon:
+          iconUrl: /static/markers/ballot-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+
+      - condition: '{{is_on_ballot}} === true && {{layer.focused}} === true'
+
+        # Display as markers when focused
+        icon:
+          iconUrl: /static/markers/ballot.png
+          shadowUrl: /static/markers/shadow.png
+          iconSize: [50, 60]
+          shadowSize: [58, 25]
+          iconAnchor: [25, 60]
+          shadowAnchor: [29, 23]
+
       - condition: '"{{location_type}}" === "streets_and_sidewalks" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
@@ -177,6 +234,25 @@ place_types:
           opacity: 0.9
           fillColor: '#fa824c'
           fillOpacity: 1
+
+      - condition: '{{is_on_ballot}} === true && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+
+        # Display as icons when zoomed in
+        icon:
+          iconUrl: /static/markers/ballot-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+
+      - condition: '{{is_on_ballot}} === true && {{layer.focused}} === true'
+
+        # Display as markers when focused
+        icon:
+          iconUrl: /static/markers/ballot.png
+          shadowUrl: /static/markers/shadow.png
+          iconSize: [50, 60]
+          shadowSize: [58, 25]
+          iconAnchor: [25, 60]
+          shadowAnchor: [29, 23]
 
       - condition: '"{{location_type}}" === "arts_and_culture" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
@@ -211,6 +287,25 @@ place_types:
           fillColor: '#3c91e6'
           fillOpacity: 1
 
+      - condition: '{{is_on_ballot}} === true && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+
+        # Display as icons when zoomed in
+        icon:
+          iconUrl: /static/markers/ballot-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+
+      - condition: '{{is_on_ballot}} === true && {{layer.focused}} === true'
+
+        # Display as markers when focused
+        icon:
+          iconUrl: /static/markers/ballot.png
+          shadowUrl: /static/markers/shadow.png
+          iconSize: [50, 60]
+          shadowSize: [58, 25]
+          iconAnchor: [25, 60]
+          shadowAnchor: [29, 23]
+
       - condition: '"{{location_type}}" === "education" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 
         # Display as icons when zoomed in
@@ -243,6 +338,25 @@ place_types:
           opacity: 0.9
           fillColor: '#fafffd'
           fillOpacity: 1
+
+      - condition: '{{is_on_ballot}} === true && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+
+        # Display as icons when zoomed in
+        icon:
+          iconUrl: /static/markers/ballot-dot.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+
+      - condition: '{{is_on_ballot}} === true && {{layer.focused}} === true'
+
+        # Display as markers when focused
+        icon:
+          iconUrl: /static/markers/ballot.png
+          shadowUrl: /static/markers/shadow.png
+          iconSize: [50, 60]
+          shadowSize: [58, 25]
+          iconAnchor: [25, 60]
+          shadowAnchor: [29, 23]
 
       - condition: '"{{location_type}}" === "other_idea" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
 

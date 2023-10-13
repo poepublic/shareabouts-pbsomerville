@@ -23,7 +23,7 @@ session.headers = {'content-type': 'application/json', 'x-shareabouts-silent': '
 
 # Update the DATASET_URL with the root URL of the dataset. There are a few ways
 # you can find the root URL.
-DATASET_URL = 'https://shareaboutsapi.poepublic.com/api/v2/somervillema/datasets/pb-cycle-1'
+DATASET_URL = os.environ['DATASET_URL']
 
 IDEAS_URL = DATASET_URL + '/places?include_private=True&include_invisible=True'
 ET = pytz.timezone('US/Eastern')
