@@ -614,7 +614,7 @@ place:
 survey:
   submission_type: comments
   adding_supported:
-    from: '2024-09-20 00:00 -0400'   # Daylight savings begins mid-March
+    from: '2024-09-20 17:00 -0400'   # Daylight savings begins mid-March
     until: '2024-11-21 00:00 -0500'  # and ends mid-October.
 
   # Response config
