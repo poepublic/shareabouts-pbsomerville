@@ -28,12 +28,24 @@
     #ecb607  <-- gold for ballot ideas
 */
 
+:root {
+  --pbsomerville-orange2: #e5964b;
+  --pbsomerville-orange3: #efb68b;
+  --pbsomerville-blue2: #4da1c7;
+
+  --pbsomerville-green: #b5df79;
+  --pbsomerville-orange: #fa824c;
+  --pbsomerville-dkblue: #02187a;
+  --pbsomerville-white: #fafffd;
+  --pbsomerville-ltblue: #3c91e6;
+
+  --page-bgcolor: var(--pbsomerville-orange2);
+  --main-bgcolor: var(--pbsomerville-blue2);
+  --accent-color: var(--pbsomerville-green);
+}
+
 html {
-  background-color: #b5df79;
-  background-color: #fa824c;
-  background-color: #02187a;
-  background-color: #fafffd;
-  background-color: #3c91e6;
+  background-color: var(--main-bgcolor);
 }
 
 #site-title a:link, #site-title a:visited {
@@ -45,21 +57,21 @@ html {
 #ticker,
 #add-place-btn-container {
   color: white;
-  background-color: #3c91e6;
+  background-color: var(--main-bgcolor);
 }
 
 #content {
-  color: #02187a;
-  background-color: #b5df79;
+  color: var(--pbsomerville-dkblue);
+  background-color: var(--page-bgcolor);
 }
 
 .page-overview header,
 #content .place-header {
-  border-color: #3c91e6;
+  border-color: var(--main-bgcolor);
 }
 
 .btn, .btn:visited, .btn:link {
-  background-color: #3c91e6;
+  background-color: var(--main-bgcolor);
   color: #fafffd;
   transition: color 0.15s ease-in-out,
               background-color 0.15s ease-in-out,
@@ -67,18 +79,18 @@ html {
 }
 
 .btn:hover {
-  background: #3c91e6;
-  border-color: #02187a;
+  background: var(--main-bgcolor);
+  border-color: var(--pbsomerville-dkblue);
 }
 
 a.close-btn {
-  color: #3c91e6;
-  background-color: #b5df79;
+  color: var(--main-bgcolor);
+  background-color: var(--page-bgcolor);
   transition: color 0.15s ease-in-out;
 }
 
 a.close-btn:hover {
-  color: #fa824c;
+  color: var(--accent-color);
 }
 
 #nav-btn,
@@ -86,7 +98,7 @@ a.close-btn:hover {
 .btn-secondary, .btn-secondary:visited, .btn-secondary:link,
 .list-toggle-btn, .list-toggle-btn:visited, .list-toggle-btn:link {
   color: #fafffd;
-  background-color: #02187a;
+  background-color: var(--pbsomerville-dkblue);
   transition: background-color 0.15s ease-in-out;
 }
 
@@ -94,12 +106,12 @@ a.close-btn:hover {
 .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus,
 .list-toggle-btn:hover, .list-toggle-btn:active, .list-toggle-btn:focus {
   color: #fafffd;
-  background-color: #fa824c;
+  background-color: var(--accent-color);
   border-color: rgba(0,0,0,0.05);;
 }
 
 label {
-  color: #02187a;
+  color: var(--pbsomerville-dkblue);
 }
 
 input[type=date],
@@ -118,9 +130,9 @@ input[type=week],
 .checkbox-label-text,
 select,
 textarea {
-  color: #02187a;
+  color: var(--pbsomerville-dkblue);
   background-color: #fafffd;
-  border-color: #3c91e6;
+  border-color: var(--main-bgcolor);
   transition: border-color 0.15s ease-in-out,
               box-shadow 0.15s ease-in-out;
 }
@@ -131,8 +143,8 @@ textarea:focus,
 input:focus + .radio-label-text,
 input:focus + .checkbox-label-text {
   outline: none;
-  border-color: #fa824c;
-  box-shadow: 0 0 0.5rem 0 #fa824c;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0.5rem 0 var(--accent-color);
 }
 
 .leaflet-control-geocoder-form input:focus {
@@ -140,12 +152,12 @@ input:focus + .checkbox-label-text {
 }
 
 .recent-points a {
-  border-bottom-color: #02187a;
+  border-bottom-color: var(--pbsomerville-dkblue);
   transition: background-color 0.15s ease-in-out;
 }
 
 .recent-points a:hover {
-  background-color: #fa824c;
+  background-color: var(--accent-color);
 }
 
 /*
@@ -290,8 +302,8 @@ textarea {
   text-transform: none;
   font-weight: bold;
   margin: 1rem 0;
-  border: 3px dashed #02187a;
-  color: #02187a;
+  border: 3px dashed var(--pbsomerville-dkblue);
+  color: var(--pbsomerville-dkblue);
   background-position-y: -4px;
 }
 
@@ -361,8 +373,8 @@ textarea {
   text-transform: none;
   text-align: center;
   /* color: white;
-  background-color: #02187a;
-  border-color: #02187a; */
+  background-color: var(--pbsomerville-dkblue);
+  border-color: var(--pbsomerville-dkblue); */
   border-width: 2px;
   background-position: 50% 25%;
   background-repeat: no-repeat;
@@ -373,36 +385,36 @@ textarea {
 }
 
 .place-location_type-field label .label-text:hover {
-  border-color: #3c91e6;
+  border-color: var(--main-bgcolor);
   background-color: #a3c7d9;
   color: #007fbf;
 }
 
 [name="location_type"]:checked + .label-text {
-  color: #02187a;
+  color: var(--pbsomerville-dkblue);
 }
 
 [name="location_type"][value="community_resources"]:checked + .label-text { background-image: url(/static/markers/community_resources-nobg.png); background-color: #a379df; border-color: rgba(0, 0, 0, 0.15); }
 [name="location_type"][value="parks_and_green_space"]:checked + .label-text { background-image: url(/static/markers/parks_and_green_space-nobg.png); background-color: #b5df79; border-color: rgba(0, 0, 0, 0.15); }
 [name="location_type"][value="streets_and_sidewalks"]:checked + .label-text { background-image: url(/static/markers/streets_and_sidewalks-nobg.png); background-color: #ffd614; border-color: rgba(0, 0, 0, 0.15); }
 [name="location_type"][value="arts_and_culture"]:checked + .label-text { background-image: url(/static/markers/arts_and_culture-nobg.png); background-color: #fa824c; border-color: rgba(0, 0, 0, 0.15); }
-[name="location_type"][value="education"]:checked + .label-text { background-image: url(/static/markers/education-nobg.png); background-color: #3c91e6; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="education"]:checked + .label-text { background-image: url(/static/markers/education-nobg.png); background-color: var(--pbsomerville-ltblue); border-color: rgba(0, 0, 0, 0.15); }
 [name="location_type"][value="other_idea"]:checked + .label-text { background-image: url(/static/markers/other_idea-nobg.png); background-color: #fdff97; border-color: rgba(0, 0, 0, 0.15); }
 
-[name="location_type"][value="community_resources"] + .label-text { color: #02187a; background-image: url(/static/markers/community_resources.png); background-color: white; border-color: #02187a; }
-[name="location_type"][value="parks_and_green_space"] + .label-text { color: #02187a; background-image: url(/static/markers/parks_and_green_space.png); background-color: white; border-color: #02187a; }
-[name="location_type"][value="streets_and_sidewalks"] + .label-text { color: #02187a; background-image: url(/static/markers/streets_and_sidewalks.png); background-color: white; border-color: #02187a; }
-[name="location_type"][value="arts_and_culture"] + .label-text { color: #02187a; background-image: url(/static/markers/arts_and_culture.png); background-color: white; border-color: #02187a; }
-[name="location_type"][value="education"] + .label-text { color: #02187a; background-image: url(/static/markers/education.png); background-color: white; border-color: #02187a; }
-[name="location_type"][value="other_idea"] + .label-text { color: #02187a; background-image: url(/static/markers/other_idea.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="community_resources"] + .label-text { color: var(--pbsomerville-dkblue); background-image: url(/static/markers/community_resources.png); background-color: white; border-color: var(--pbsomerville-dkblue); }
+[name="location_type"][value="parks_and_green_space"] + .label-text { color: var(--pbsomerville-dkblue); background-image: url(/static/markers/parks_and_green_space.png); background-color: white; border-color: var(--pbsomerville-dkblue); }
+[name="location_type"][value="streets_and_sidewalks"] + .label-text { color: var(--pbsomerville-dkblue); background-image: url(/static/markers/streets_and_sidewalks.png); background-color: white; border-color: var(--pbsomerville-dkblue); }
+[name="location_type"][value="arts_and_culture"] + .label-text { color: var(--pbsomerville-dkblue); background-image: url(/static/markers/arts_and_culture.png); background-color: white; border-color: var(--pbsomerville-dkblue); }
+[name="location_type"][value="education"] + .label-text { color: var(--pbsomerville-dkblue); background-image: url(/static/markers/education.png); background-color: white; border-color: var(--pbsomerville-dkblue); }
+[name="location_type"][value="other_idea"] + .label-text { color: var(--pbsomerville-dkblue); background-image: url(/static/markers/other_idea.png); background-color: white; border-color: var(--pbsomerville-dkblue); }
 
 
 /* =City-wide toggle
 -------------------------------------------------------------- */
 
 .drag-marker-instructions {
-  color: #02187a;
-  background-color: #fa824c;
+  color: var(--pbsomerville-dkblue);
+  background-color: var(--accent-color);
   text-shadow: none;
 }
 
@@ -466,7 +478,7 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
 .place-detail .promotion {
   margin-top: -1rem;
   padding-left: 1rem;
-  background-color: #b5df79;
+  background-color: var(--page-bgcolor);
 }
 
 .user-support label {
