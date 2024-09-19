@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block site-title %}
+<a href="/">
+  <span class="main-title">{% translate 'Somerville' %}</span>
+  <span class="sub-title">{% translate 'Participatory<br>Budgeting' %}</span>
+</a>
+{% endblock %}
+
+{% block meta %}
+  <link rel="prefetch" href="/static/markers/community_resources-nobg.png">
+  <link rel="prefetch" href="/static/markers/parks_and_green_space-nobg.png">
+  <link rel="prefetch" href="/static/markers/streets_and_sidewalks-nobg.png">
+  <link rel="prefetch" href="/static/markers/arts_and_culture-nobg.png">
+  <link rel="prefetch" href="/static/markers/education-nobg.png">
+  <link rel="prefetch" href="/static/markers/other_idea-nobg.png">
+  <link rel="prefetch" href="/static/markers/community_resources.png">
+  <link rel="prefetch" href="/static/markers/parks_and_green_space.png">
+  <link rel="prefetch" href="/static/markers/streets_and_sidewalks.png">
+  <link rel="prefetch" href="/static/markers/arts_and_culture.png">
+  <link rel="prefetch" href="/static/markers/education.png">
+  <link rel="prefetch" href="/static/markers/other_idea.png">
+
+  {% if place %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ place.properties.idea }}">
+    <meta name="twitter:description" content="{{ place.properties.description }}">
+    {% if STATIC_URL.0 == '/' %}
+    <meta name="twitter:image:src" content="{{ request.scheme }}://{{ request.get_host }}{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% else %}
+    <meta name="twitter:image:src" content="{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% endif %}
+    {% comment %} TODO: Fill this in when we know if the username is from twitter
+      <meta name="twitter:creator" content="place.submitter.username">
+    {% endcomment %}
+
+    <!-- Facebook -->
+    <meta property="og:site_name" content="{{ config.app.title }}" />
+    <meta property="og:title" content="{{ place.properties.idea }}" />
+    <meta property="og:description" content="{{ place.properties.description }}" />
+    {% if STATIC_URL.0 == '/' %}
+    <meta name="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% else %}
+    <meta name="og:image" content="{{ STATIC_URL }}markers/{{ place.properties.location_type }}-dot.png">
+    {% endif %}
+  {% else %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ config.app.title }}">
+    <meta name="twitter:description" content="{{ config.app.meta_description }}">
+
+    <!-- Facebook -->
+    <meta property="og:site_name" content="{{ config.app.title }}" />
+    <meta property="og:title" content="{{ config.app.title }}" />
+    <meta property="og:description" content="{{ config.app.og_description }}" />
+    {% if STATIC_URL.0 == '/' %}
+    <meta name="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ STATIC_URL }}css/images/somerville-logo.png">
+    {% else %}
+    <meta name="og:image" content="{{ STATIC_URL }}css/images/somerville-logo.png">
+    {% endif %}
+  {% endif%}
+{% endblock %}
+
+<!--
+  This will place content at the top of the side bar
+ -->
+{% block sidebar %}
+{% endblock %}
+
+<!--
+  This will place content in the colophon below the map
+ -->
+{% block colophon %}
+<p id="powered-by">{% blocktrans %}Powered by{% endblocktrans %} <a href="http://shareabouts.org/" class="shareabouts-logo" target="_blank">Shareabouts</a>, <span class="nobreak">a project of <a href="http://openplans.org/" class="openplans-logo" target="_blank">OpenPlans</a></span></p>
+{% endblock %}
+
+<!--
+  Analytics, custom JS, and such go here
+ -->
+{% block includes %}
+<script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+<script src="{% static 'js/shareabouts-customizations.js' %}"></script>
+<script src="{% static 'js/mailchimp-subscription.js' %}"></script>
+
+<!-- Preload site images -->
+<div class="image-preloads">
+</div>
+{% endblock %}

@@ -1,0 +1,563 @@
+/*
+ * This CSS file follows the default Shareabouts style.css.
+ * All rules herein will override the default Shareabouts styles.
+ * NOTE: "With great power comes great responsibility."
+ */
+
+/* =Global
+-------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Libre+Franklin:wght@400;500;900&display=swap');
+
+/*
+  Colors:
+    #b5df79
+    #fa824c
+    #3c91e6
+    #02187a
+    #fafffd
+
+    #27306e  <-- dark blue in the logo
+    #f2f2f2  <-- light neutral gray in the guidebook
+
+    #a379df  <-- purple for Community Resources
+    #b5df79  <-- green for Parks & Green Spaces
+    #ffd614  <-- yellow for Streets & Sidewalks
+    #fa824c  <-- orange for Arts & Culture
+    #3c91e6  <-- blue for Education
+    #fdff97  <-- light yellow for Other
+    #ecb607  <-- gold for ballot ideas
+*/
+
+html {
+  background-color: #b5df79;
+  background-color: #fa824c;
+  background-color: #02187a;
+  background-color: #fafffd;
+  background-color: #3c91e6;
+}
+
+#site-title a:link, #site-title a:visited {
+  color: white;
+}
+
+#site-header,
+#colophon,
+#ticker,
+#add-place-btn-container {
+  color: white;
+  background-color: #3c91e6;
+}
+
+#content {
+  color: #02187a;
+  background-color: #b5df79;
+}
+
+.page-overview header,
+#content .place-header {
+  border-color: #3c91e6;
+}
+
+.btn, .btn:visited, .btn:link {
+  background-color: #3c91e6;
+  color: #fafffd;
+  transition: color 0.15s ease-in-out,
+              background-color 0.15s ease-in-out,
+              border-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background: #3c91e6;
+  border-color: #02187a;
+}
+
+a.close-btn {
+  color: #3c91e6;
+  background-color: #b5df79;
+  transition: color 0.15s ease-in-out;
+}
+
+a.close-btn:hover {
+  color: #fa824c;
+}
+
+#nav-btn,
+.btn-primary, .btn-primary:visited, .btn-primary:link,
+.btn-secondary, .btn-secondary:visited, .btn-secondary:link,
+.list-toggle-btn, .list-toggle-btn:visited, .list-toggle-btn:link {
+  color: #fafffd;
+  background-color: #02187a;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus,
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus,
+.list-toggle-btn:hover, .list-toggle-btn:active, .list-toggle-btn:focus {
+  color: #fafffd;
+  background-color: #fa824c;
+  border-color: rgba(0,0,0,0.05);;
+}
+
+label {
+  color: #02187a;
+}
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+.radio-label-text,
+.checkbox-label-text,
+select,
+textarea {
+  color: #02187a;
+  background-color: #fafffd;
+  border-color: #3c91e6;
+  transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+input:focus + .radio-label-text,
+input:focus + .checkbox-label-text {
+  outline: none;
+  border-color: #fa824c;
+  box-shadow: 0 0 0.5rem 0 #fa824c;
+}
+
+.leaflet-control-geocoder-form input:focus {
+  box-shadow: none;
+}
+
+.recent-points a {
+  border-bottom-color: #02187a;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.recent-points a:hover {
+  background-color: #fa824c;
+}
+
+/*
+  Fonts:
+    Genty
+    Agrandir Black
+    Open Sans
+*/
+
+#site-title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+}
+
+#site-title a:link,
+#site-title a:visited {
+  display: flex;
+  gap: 1rem;
+}
+
+#site-title a .main-title,
+#site-title a .main-title {
+  display: block;
+}
+
+#site-title .sub-title {
+  font-size: 0.5em;
+}
+
+#content {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+}
+
+.page-overview header,
+#content .place-header {
+  text-transform: uppercase;
+}
+
+h4 {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 0.5rem
+}
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+.radio-label-text,
+.checkbox-label-text,
+select,
+textarea {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-header,
+#ticker,
+#colophon {
+  /* box-shadow: none; */
+}
+
+@media only screen and (min-width: 1024px) {
+  #language-picker {
+    padding-top: 0.4rem;
+  }
+}
+
+/* =Pages
+-------------------------------------------------------------- */
+
+#content { z-index: 39; }
+#ticker { z-index: 36; }
+#colophon { z-index: 38; }
+
+.page-overview header,
+#content .place-header {
+  border-style: solid;
+  border-width: 2px 0;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.page-overview header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.page-overview header h1 {
+  flex: 1 0 20rem;
+}
+
+.page-overview header img {
+  /* display: block; */
+  width: 10rem;
+  height: 10rem;
+}
+
+.idea-location {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+}
+
+.place-submission-details {
+  text-transform: none;
+}
+
+.place-label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.ballot-announcement {
+  background-image: url(/static/markers/ballot-nobg.png);
+  background-repeat: no-repeat;
+  height: 60px;
+  background-size: 50px 60px;
+  padding-left: 58px;
+  background-color: #ecb607;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: none;
+  font-weight: bold;
+  margin: 1rem 0;
+  border: 3px dashed #02187a;
+  color: #02187a;
+  background-position-y: -4px;
+}
+
+/* =Forms
+-------------------------------------------------------------- */
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+.radio-label-text,
+.checkbox-label-text,
+select,
+textarea {
+  border-radius: 0.25rem;
+  border-width: 2px;
+}
+
+.radio-label-text:hover,
+.checkbox-label-text:hover {
+  border-width: 2px;
+}
+
+:checked + .radio-label-text,
+:checked + .checkbox-label-text {
+  border-width: 2px;
+}
+
+/* .radio-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.radio-group label,
+.checkbox-group label {
+  margin-right: 0;
+} */
+
+.place-location_type-field .radio-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+}
+
+.place-location_type-field label .label-text {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  text-transform: none;
+  text-align: center;
+  /* color: white;
+  background-color: #02187a;
+  border-color: #02187a; */
+  border-width: 2px;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: 4rem 4.8rem;
+
+  transition: background-color 0.15s ease-in-out
+              color 0.15s ease-in-out;
+}
+
+.place-location_type-field label .label-text:hover {
+  border-color: #3c91e6;
+  background-color: #a3c7d9;
+  color: #007fbf;
+}
+
+[name="location_type"]:checked + .label-text {
+  color: #02187a;
+}
+
+[name="location_type"][value="community_resources"]:checked + .label-text { background-image: url(/static/markers/community_resources-nobg.png); background-color: #a379df; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="parks_and_green_space"]:checked + .label-text { background-image: url(/static/markers/parks_and_green_space-nobg.png); background-color: #b5df79; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="streets_and_sidewalks"]:checked + .label-text { background-image: url(/static/markers/streets_and_sidewalks-nobg.png); background-color: #ffd614; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="arts_and_culture"]:checked + .label-text { background-image: url(/static/markers/arts_and_culture-nobg.png); background-color: #fa824c; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="education"]:checked + .label-text { background-image: url(/static/markers/education-nobg.png); background-color: #3c91e6; border-color: rgba(0, 0, 0, 0.15); }
+[name="location_type"][value="other_idea"]:checked + .label-text { background-image: url(/static/markers/other_idea-nobg.png); background-color: #fdff97; border-color: rgba(0, 0, 0, 0.15); }
+
+[name="location_type"][value="community_resources"] + .label-text { color: #02187a; background-image: url(/static/markers/community_resources.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="parks_and_green_space"] + .label-text { color: #02187a; background-image: url(/static/markers/parks_and_green_space.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="streets_and_sidewalks"] + .label-text { color: #02187a; background-image: url(/static/markers/streets_and_sidewalks.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="arts_and_culture"] + .label-text { color: #02187a; background-image: url(/static/markers/arts_and_culture.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="education"] + .label-text { color: #02187a; background-image: url(/static/markers/education.png); background-color: white; border-color: #02187a; }
+[name="location_type"][value="other_idea"] + .label-text { color: #02187a; background-image: url(/static/markers/other_idea.png); background-color: white; border-color: #02187a; }
+
+
+/* =City-wide toggle
+-------------------------------------------------------------- */
+
+.drag-marker-instructions {
+  color: #02187a;
+  background-color: #fa824c;
+  text-shadow: none;
+}
+
+.drag-marker-instructions { display: none; }
+.approx-address { display: none; }
+#centerpoint.newpin { display: none; }
+
+[data-city_wide="false"] .drag-marker-instructions { display: block; }
+[data-city_wide="false"] .approx-address { display: block; }
+[data-city_wide="false"] #centerpoint.newpin { display: inline; }
+
+/* radio buttons */
+.place-city_wide-field label {
+  display: block;
+}
+
+.place-city_wide-field .radio-group {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+
+.place-city_wide-field .radio-group label {
+ margin: 0.25rem;
+}
+
+.radio-group input[name="city_wide"] {
+ width: 1px;
+ height: 1px;
+ opacity: 0;
+ top: 0;
+}
+
+input[name="city_wide"] + .label-text {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: center;
+ padding-top: 4.5rem;
+ width: 10rem;
+ height: 8rem;
+ background-position: center 0.9rem;
+ background-repeat: no-repeat;
+ background-size: 3.8rem 3.6rem;
+ text-align: center;
+}
+
+input[name="city_wide"]:checked + .label-text {
+ background-color: #1b1949;
+}
+
+input[name="city_wide"][value="true"] + .label-text { background-image: url("/static/images/cityhall-light.png"); }
+input[name="city_wide"][value="false"] + .label-text { background-image: url("/static/images/location-light.png"); }
+
+input[name="city_wide"][value="true"]:checked + .label-text { background-image: url("/static/images/cityhall-dark.png"); }
+input[name="city_wide"][value="false"]:checked + .label-text { background-image: url("/static/images/location-dark.png"); }
+
+
+/* =Promotion
+-------------------------------------------------------------- */
+
+.place-detail .promotion {
+  margin-top: -1rem;
+  padding-left: 1rem;
+  background-color: #b5df79;
+}
+
+.user-support label {
+  color: inherit;
+}
+
+.user-support:hover label {
+  background-color: inherit;
+}
+
+
+/* =Authentication
+-------------------------------------------------------------- */
+
+.user-menu {
+  display: none;
+}
+.or-sign-in {
+  display: none;
+}
+
+.user-menu.authed {
+  display: block;
+}
+
+.user-menu.authed #sign-in-btn::before {
+  content: "Logged in as: ";
+  line-height: 3rem;
+  padding-right: 0.5rem;
+  color: white;
+}
+
+#sign-in-btn:hover {
+  cursor: default;
+}
+
+.sign-in-menu.is-exposed {
+  display: none;
+}
+
+
+/* =Activity Ticker
+-------------------------------------------------------------- */
+.recent-points a {
+  border-top: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* =Moderation
+-------------------------------------------------------------- */
+
+.place-moderation-bar {
+  margin-bottom: 1.5rem;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1300px) {
+}
+
+.image-preloads {
+      /* width: 0px;
+      height: 0px;
+      display: inline;
+      background-image: url(/static/markers/community_resources-nobg.png);
+      background-image: url(/static/markers/parks_and_green_space-nobg.png);
+      background-image: url(/static/markers/streets_and_sidewalks-nobg.png);
+      background-image: url(/static/markers/arts_and_culture-nobg.png);
+      background-image: url(/static/markers/education-nobg.png);
+      background-image: url(/static/markers/other_idea-nobg.png);
+      background-image: url(/static/markers/community_resources.png);
+      background-image: url(/static/markers/parks_and_green_space.png);
+      background-image: url(/static/markers/streets_and_sidewalks.png);
+      background-image: url(/static/markers/arts_and_culture.png);
+      background-image: url(/static/markers/education.png);
+      background-image: url(/static/markers/other_idea.png);
+      background-image: url(); */
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
