@@ -231,7 +231,11 @@ LOGGING = {
             'handlers': ['console', 'sentry'],
             'propagate': True,
         }
-    }
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
 }
 
 ##############################################################################
@@ -395,13 +399,12 @@ LOCALE_PATHS = (
     os.path.join(HERE, '..', 'flavors', flavor, 'locale'),
 )
 
-if SHAREABOUTS['DATASET_ROOT'].startswith('/'):
+if 'DATASET_ROOT' in SHAREABOUTS and SHAREABOUTS['DATASET_ROOT'].startswith('/'):
     INSTALLED_APPS += (
         # =================================
         # 3rd-party reusaple apps
         # =================================
         'rest_framework',
-        'django_nose',
         'storages',
         'social.apps.django_app.default',
         'raven.contrib.django.raven_compat',

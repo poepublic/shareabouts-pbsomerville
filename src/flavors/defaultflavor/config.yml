@@ -90,7 +90,7 @@ place_types:
           iconAnchor: [9, 9]
 
       - condition: '"{{location_type}}" === "landmark" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
+        # Display landmarks as icons when focused/selected
 
         icon:
           iconUrl: /static/css/images/markers/marker-0d85e9.png
@@ -373,12 +373,18 @@ pages:
       - title: _(Documentation)
         external: true
         url: https://github.com/openplans/shareabouts/tree/master/doc
+        link_attrs:
+          target: _blank
       - title: _(Issues)
         external: true
         url: https://github.com/openplans/shareabouts/issues
+        link_attrs:
+          target: _blank
       - title: _(GitHub)
         external: true
         url: https://github.com/openplans/shareabouts
+        link_attrs:
+          target: _blank
   - title: Filter Places
     slug: filter-type
     pages:
