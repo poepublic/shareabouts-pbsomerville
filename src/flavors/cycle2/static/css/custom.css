@@ -41,7 +41,11 @@
 
   --page-bgcolor: var(--pbsomerville-orange2);
   --main-bgcolor: var(--pbsomerville-blue2);
-  --accent-color: var(--pbsomerville-green);
+  --accent-color1: var(--pbsomerville-green);
+  --accent-color2: var(--pbsomerville-orange);
+
+  --close-btn-color: var(--accent-color1);
+  --close-btn-hover-color: var(--pbsomerville-dkblue);
 }
 
 html {
@@ -67,7 +71,7 @@ html {
 
 .page-overview header,
 #content .place-header {
-  border-color: var(--main-bgcolor);
+  border-color: var(--accent-color1);
 }
 
 .btn, .btn:visited, .btn:link {
@@ -84,13 +88,13 @@ html {
 }
 
 a.close-btn {
-  color: var(--main-bgcolor);
+  color: var(--close-btn-color);
   background-color: var(--page-bgcolor);
   transition: color 0.15s ease-in-out;
 }
 
 a.close-btn:hover {
-  color: var(--accent-color);
+  color: var(--close-btn-hover-color);
 }
 
 #nav-btn,
@@ -106,7 +110,7 @@ a.close-btn:hover {
 .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus,
 .list-toggle-btn:hover, .list-toggle-btn:active, .list-toggle-btn:focus {
   color: #fafffd;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color2);
   border-color: rgba(0,0,0,0.05);;
 }
 
@@ -143,8 +147,8 @@ textarea:focus,
 input:focus + .radio-label-text,
 input:focus + .checkbox-label-text {
   outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0.5rem 0 var(--accent-color);
+  border-color: var(--accent-color1);
+  box-shadow: 0 0 0.5rem 0 var(--accent-color1);
 }
 
 .leaflet-control-geocoder-form input:focus {
@@ -157,7 +161,7 @@ input:focus + .checkbox-label-text {
 }
 
 .recent-points a:hover {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color2);
 }
 
 /*
@@ -414,7 +418,7 @@ textarea {
 
 .drag-marker-instructions {
   color: var(--pbsomerville-dkblue);
-  background-color: var(--accent-color);
+  background-color: var(--accent-color1);
   text-shadow: none;
 }
 
