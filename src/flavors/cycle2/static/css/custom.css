@@ -44,8 +44,8 @@
   --accent-color1: var(--pbsomerville-green);
   --accent-color2: var(--pbsomerville-orange);
 
-  --close-btn-color: var(--accent-color1);
-  --close-btn-hover-color: var(--pbsomerville-dkblue);
+  --close-btn-color: var(--pbsomerville-dkblue);
+  --close-btn-hover-color: var(--accent-color1);
 }
 
 html {
