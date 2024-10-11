@@ -116,3 +116,25 @@ Shareabouts.PlaceFormView.prototype.render = function() {
   this.resetPersonalInformationSurvey();
   return result;
 }
+
+// Provide a way to loop through location types in a template.
+Handlebars.registerHelper('each_place_type', function() {
+  const args = Array.from(arguments);
+  const options = args.slice(-1)[0];
+  const exclusions = args.slice(0, args.length-1);
+
+  let result = '';
+  for (const [type, typeOptions] of Object.entries(Shareabouts.Config.placeTypes)) {
+    const data = {
+      type,
+      ...typeOptions
+    };
+
+    // if not an exclusion
+    if (!exclusions.includes(type)) {
+      result += options.fn(data);
+    }
+  }
+
+  return result;
+});
