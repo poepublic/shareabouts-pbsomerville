@@ -67,6 +67,7 @@ map:
 place_types:
   community_resources:
     label: _(Community Resouce Idea)
+    color: '#a379df'
     rules:
       - condition: '"{{location_type}}" === "community_resources" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -119,6 +120,7 @@ place_types:
 
   parks_and_green_space:
     label: _(Parks & Green Space Idea)
+    color: '#b5df79'
     rules:
       - condition: '"{{location_type}}" === "parks_and_green_space" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -171,6 +173,7 @@ place_types:
 
   streets_and_sidewalks:
     label: _(Streets & Sidewalks Idea)
+    color: '#ffd614'
     rules:
       - condition: '"{{location_type}}" === "streets_and_sidewalks" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -223,6 +226,7 @@ place_types:
 
   arts_and_culture:
     label: _(Arts & Culture Idea)
+    color: '#fa824c'
     rules:
       - condition: '"{{location_type}}" === "arts_and_culture" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -275,6 +279,7 @@ place_types:
 
   education:
     label: _(Education Idea)
+    color: '#3c91e6'
     rules:
       - condition: '"{{location_type}}" === "education" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
@@ -327,6 +332,7 @@ place_types:
 
   other_idea:
     label: _(Other Idea)
+    color: '#fafffd'
     rules:
       - condition: '"{{location_type}}" === "other_idea" && {{map.zoom}} < 14 && {{layer.focused}} === false'
 
