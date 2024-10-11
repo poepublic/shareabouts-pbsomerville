@@ -587,13 +587,16 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
 .place-list-header {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid #eeeeee;
   padding-top: 1.175em;
   padding-bottom: 1.25em;
   background-color: white;
   z-index: 10;
+}
+
+.place-list-header .actions-row {
+  display: flex;
+  justify-content: space-between;
 }
 
 .list-search-form .submit-btn {
@@ -606,6 +609,14 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
 
 .list-sort-menu {
   float: none;
+}
+
+.place-count-wrapper {
+  padding-top: 0.5em;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
 }
 
 .place-list {

@@ -148,3 +148,31 @@ Handlebars.registerHelper('count_places', function(type) {
     return places.length;
   }
 });
+
+// Add the current count of places to the location type filter menu.
+
+// Add the current count of places to the place list view.
+var original_PlaceListView_ui = Shareabouts.PlaceListView.prototype.ui;
+Shareabouts.PlaceListView.prototype.ui = {
+  ...original_PlaceListView_ui,
+  placeCount: '.place-count'
+};
+
+Shareabouts.PlaceListView.prototype.updatePlaceCount = _.debounce(function() {
+  const visibleViews = Object.values(this.views).filter(v => v.$el.is(':visible'));
+  this.ui.placeCount.text(visibleViews.length);
+}, 50, false);
+
+var original_PlaceListView_onAfterItemAdded = Shareabouts.PlaceListView.prototype.onAfterItemAdded;
+Shareabouts.PlaceListView.prototype.onAfterItemAdded = function() {
+  const result = original_PlaceListView_onAfterItemAdded.call(this, ...arguments);
+  this.updatePlaceCount();
+  return result;
+}
+
+var original_PlaceListView_applyFilters = Shareabouts.PlaceListView.prototype.applyFilters;
+Shareabouts.PlaceListView.prototype.applyFilters = function() {
+  const result = original_PlaceListView_applyFilters.call(this, ...arguments);
+  this.updatePlaceCount();
+  return result;
+}
