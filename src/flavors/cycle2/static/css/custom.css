@@ -556,6 +556,18 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
   height: 2rem;
 }
 
+.legend-text {
+  flex-grow: 1;
+}
+
+.legend-count {
+  width: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
 .recent-points a {
   border-top: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);

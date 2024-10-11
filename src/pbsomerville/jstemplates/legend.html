@@ -3,6 +3,7 @@
     <div class="legend-item {{type}}-legend-item" id="{{type}}-legend-entry" style="background-color: {{color}};">
       <img src="{{ STATIC_URL }}markers/{{type}}-nobg.png" />
       <div class="legend-text">{{label}}s</div>
+      <div class="legend-count">({{count_places type}})</div>
     </div>
   {{/each_place_type}}
 </div>

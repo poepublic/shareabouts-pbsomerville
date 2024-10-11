@@ -138,3 +138,13 @@ Handlebars.registerHelper('each_place_type', function() {
 
   return result;
 });
+
+// Provide a way to count the number of places for a given location type.
+Handlebars.registerHelper('count_places', function(type) {
+  const places = window.app.collection.models;
+  if (type) {
+    return places.filter(place => place.get('location_type') === type).length;
+  } else {
+    return places.length;
+  }
+});
