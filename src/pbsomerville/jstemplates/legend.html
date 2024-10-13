@@ -1,9 +1,22 @@
-<div class="legend place-type-legend">
-  {{#each_place_type}}
-    <div class="legend-item {{type}}-legend-item" id="{{type}}-legend-entry" style="background-color: {{color}};">
-      <img src="{{ STATIC_URL }}markers/{{type}}-nobg.png" role="presentation">
-      <div class="legend-text" title="Idea type">{{label}}s</div>
-      <div class="legend-count" title="Number of ideas">{{count_places type}}</div>
+<div>
+  <button class="legend-toggle btn btn-secondary">
+    <h2>Legend</h2>
+    <div type="button" class="legend-toggle-button" title="Toggle the legend visibility">
+      <div class="hamburger-icon">
+        <div class="hamburger-bar"></div>
+        <div class="hamburger-bar"></div>
+        <div class="hamburger-bar"></div>
+      </div>
     </div>
-  {{/each_place_type}}
+  </button>
+
+  <div class="legend place-type-legend">
+    {{#each_place_type}}
+      <div class="legend-item {{type}}-legend-item" id="{{type}}-legend-entry" style="background-color: {{color}};">
+        <img src="{{ STATIC_URL }}markers/{{type}}-nobg.png" role="presentation">
+        <div class="legend-text" title="Idea type">{{label}}s</div>
+        <div class="legend-count" title="Number of ideas">{{count_places type}}</div>
+      </div>
+    {{/each_place_type}}
+  </div>
 </div>

@@ -152,15 +152,27 @@ Handlebars.registerHelper('count_places', function(type) {
 // Update the current count of places in the legend. Debounce the function to
 // prevent it from being called too frequently.
 Shareabouts.ActivityView.prototype.updateLegendPlaceCounts = _.debounce(function() {
+
+  const legendWrapper = this.el.querySelector('.legend-wrapper');
+  let legendToggleBtn = this.el.querySelector('.legend-toggle');
+  if (this.toggleLegend) {
+    legendToggleBtn.removeEventListener('click', this.toggleLegend);
+  }
+
   const html = Handlebars.templates['legend']();
-  console.log('re-rendering counts');
-  this.$('.legend-wrapper').html(html);
+  legendWrapper.innerHTML = html;
+
+  legendToggleBtn = this.el.querySelector('.legend-toggle');
+  this.toggleLegend = () => {
+    legendWrapper.classList.toggle('open');
+  };
+  legendToggleBtn.addEventListener('click', this.toggleLegend);
 }, 0, false);
 
-// Use app.collection events to trigger an update. Since it's not a Marionette view,
-// we have to manage the event bindings ourselves.
 var original_ActivityView_render = Shareabouts.ActivityView.prototype.render;
 Shareabouts.ActivityView.prototype.render = function() {
+  // Use app.collection events to trigger an update. Since it's not a Marionette view,
+  // we have to manage the event bindings ourselves.
   if (this.boundUpdateLegendPlaceCounts) {
     app.collection.off('add remove reset', this.boundUpdateLegendPlaceCounts);
   }
@@ -180,7 +192,6 @@ Shareabouts.PlaceListView.prototype.ui = {
 };
 
 Shareabouts.PlaceListView.prototype.updatePlaceCount = _.debounce(function() {
-  console.log('updating place count in list');
   const visibleViews = Object.values(this.views).filter(v => v.$el.is(':visible'));
   this.ui.placeCount.text(visibleViews.length);
 }, 0, false);
