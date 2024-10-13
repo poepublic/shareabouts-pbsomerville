@@ -83,8 +83,8 @@
 {% block includes %}
 <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
 
-<script src="{% static 'js/shareabouts-customizations.js' %}"></script>
-<script src="{% static 'js/mailchimp-subscription.js' %}"></script>
+<script src="{% static 'js/shareabouts-customizations.js' %}?_={{settings.LAST_DEPLOY_DATE}}""></script>
+<script src="{% static 'js/mailchimp-subscription.js' %}?_={{settings.LAST_DEPLOY_DATE}}""></script>
 
 <!-- Preload site images -->
 <div class="image-preloads">
