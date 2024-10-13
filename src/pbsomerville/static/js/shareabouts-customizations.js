@@ -149,7 +149,28 @@ Handlebars.registerHelper('count_places', function(type) {
   }
 });
 
-// Add the current count of places to the location type filter menu.
+// Update the current count of places in the legend. Debounce the function to
+// prevent it from being called too frequently.
+Shareabouts.ActivityView.prototype.updateLegendPlaceCounts = _.debounce(function() {
+  const html = Handlebars.templates['legend']();
+  console.log('re-rendering counts');
+  this.$('.legend-wrapper').html(html);
+}, 0, false);
+
+// Use app.collection events to trigger an update. Since it's not a Marionette view,
+// we have to manage the event bindings ourselves.
+var original_ActivityView_render = Shareabouts.ActivityView.prototype.render;
+Shareabouts.ActivityView.prototype.render = function() {
+  if (this.boundUpdateLegendPlaceCounts) {
+    app.collection.off('add remove reset', this.boundUpdateLegendPlaceCounts);
+  }
+
+  const result = original_ActivityView_render.call(this, ...arguments);
+
+  this.boundUpdateLegendPlaceCounts = this.updateLegendPlaceCounts.bind(this);
+  app.collection.on('add remove reset', this.boundUpdateLegendPlaceCounts);
+  return result;
+}
 
 // Add the current count of places to the place list view.
 var original_PlaceListView_ui = Shareabouts.PlaceListView.prototype.ui;
@@ -159,9 +180,10 @@ Shareabouts.PlaceListView.prototype.ui = {
 };
 
 Shareabouts.PlaceListView.prototype.updatePlaceCount = _.debounce(function() {
+  console.log('updating place count in list');
   const visibleViews = Object.values(this.views).filter(v => v.$el.is(':visible'));
   this.ui.placeCount.text(visibleViews.length);
-}, 50, false);
+}, 0, false);
 
 var original_PlaceListView_onAfterItemAdded = Shareabouts.PlaceListView.prototype.onAfterItemAdded;
 Shareabouts.PlaceListView.prototype.onAfterItemAdded = function() {

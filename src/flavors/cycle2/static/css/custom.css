@@ -568,6 +568,14 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
   font-size: 0.9em;
 }
 
+.legend-count::before {
+  content: "(";
+}
+
+.legend-count::after {
+  content: ")";
+}
+
 .recent-points a {
   border-top: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
