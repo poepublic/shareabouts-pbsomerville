@@ -524,17 +524,19 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
 }
 
 
-/* =Activity Ticker
+/* =Legend
 -------------------------------------------------------------- */
 .legend-wrapper {
   position: sticky;
   top: 0;
   z-index: 10;
   background-color: var(--main-bgcolor);
+  font-size: 0.875em;
 }
 
 .legend-wrapper.open {
   padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .legend-wrapper h2 {
@@ -621,6 +623,7 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
   gap: 0.5rem;
   padding: 0.5rem;
   border: none;
+  text-decoration: none;
   color: var(--pbsomerville-dkblue);
 }
 
@@ -667,6 +670,9 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
 .place-type-legend .legend-count::after {
   content: ")";
 }
+
+/* =Activity Ticker
+-------------------------------------------------------------- */
 
 .recent-points a {
   border-top: none;

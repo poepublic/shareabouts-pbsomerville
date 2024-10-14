@@ -152,6 +152,10 @@ Handlebars.registerHelper('is_place_type_shown', function(type, options) {
 
 // Provide a way to count the number of places for a given location type.
 Handlebars.registerHelper('count_places', function(type) {
+  if (!window.app) {
+    return '…';
+  }
+
   const places = window.app.collection.models;
   if (type) {
     return places.filter(place => place.get('location_type') === type).length;
@@ -161,7 +165,7 @@ Handlebars.registerHelper('count_places', function(type) {
 });
 
 // Update the current count of places in the legend.
-Shareabouts.ActivityView.prototype.renderLegend = function() {
+Shareabouts.AppView.prototype.renderLegend = function() {
   const legendWrapper = this.el.querySelector('.legend-wrapper');
   if (!legendWrapper) {
     return;
@@ -170,28 +174,21 @@ Shareabouts.ActivityView.prototype.renderLegend = function() {
   legendWrapper.innerHTML = html;
 };
 
-Shareabouts.ActivityView.prototype.toggleLegend = function() {
+Shareabouts.AppView.prototype.toggleLegend = function() {
   const legendWrapper = this.el.querySelector('.legend-wrapper');
   legendWrapper.classList.toggle('open');
 }
 
-var original_ActivityView_render = Shareabouts.ActivityView.prototype.render;
-Shareabouts.ActivityView.prototype.render = function() {
-  // Use app.collection events to trigger an update. Since it's not a Marionette view,
-  // we have to manage the event bindings ourselves.
-  if (this.boundRenderLegend) {
-    app.collection.off('add remove reset', this.boundRenderLegend);
-  }
+var original_AppView_initialize = Shareabouts.AppView.prototype.initialize;
+Shareabouts.AppView.prototype.initialize = function() {
+  const result = original_AppView_initialize.call(this, ...arguments);
+  this.renderLegend();
 
-  if (this.handleLegendToggleClick) {
-    this.el.removeEventListener('click', this.handleLegendToggleClick);
-  }
-
-  const result = original_ActivityView_render.call(this, ...arguments);
-
+  // Use app.collection events to trigger a legend update.
   this.boundRenderLegend = _.debounce(this.renderLegend, 0, false).bind(this);
-  app.collection.on('add remove reset', this.boundRenderLegend);
+  this.collection.on('add remove reset', this.boundRenderLegend);
 
+  // Handle the legend toggle button.
   this.handleLegendToggleClick = (evt) => {
     if (evt.target.closest('.legend-toggle')) {
       this.toggleLegend();
@@ -202,14 +199,14 @@ Shareabouts.ActivityView.prototype.render = function() {
 }
 
 // Update the current place type in the activity view.
-Shareabouts.ActivityView.prototype.setSelectedPlaceType = function(type) {
+Shareabouts.AppView.prototype.setSelectedPlaceType = function(type) {
   this.renderLegend();
 }
 
 var original_App_setLocationTypeFilter = Shareabouts.App.prototype.setLocationTypeFilter;
 Shareabouts.App.prototype.setLocationTypeFilter = function(type) {
   const result = original_App_setLocationTypeFilter.call(this, ...arguments);
-  this.appView.activityView.setSelectedPlaceType(type);
+  this.appView.setSelectedPlaceType(type);
   return result;
 }
 
