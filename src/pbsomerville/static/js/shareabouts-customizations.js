@@ -139,6 +139,17 @@ Handlebars.registerHelper('each_place_type', function() {
   return result;
 });
 
+// Provide a way to determine whether a given place type is visible (i.e. not
+// filtered out).
+Handlebars.registerHelper('is_place_type_shown', function(type, options) {
+  const path = window.location.pathname;
+  const isFiltered = path.includes('/filter/') && !path.includes('/filter/all');
+  const filterType = path.split('/').pop();
+
+  const data = {isFiltered, ...this};
+  return (!isFiltered || filterType === type) ? options.fn(data) : options.inverse(data);
+});
+
 // Provide a way to count the number of places for a given location type.
 Handlebars.registerHelper('count_places', function(type) {
   const places = window.app.collection.models;
@@ -149,50 +160,50 @@ Handlebars.registerHelper('count_places', function(type) {
   }
 });
 
-// Update the current count of places in the legend. Debounce the function to
-// prevent it from being called too frequently.
-Shareabouts.ActivityView.prototype.updateLegendPlaceCounts = _.debounce(function() {
-
+// Update the current count of places in the legend.
+Shareabouts.ActivityView.prototype.renderLegend = function() {
   const legendWrapper = this.el.querySelector('.legend-wrapper');
-  let legendToggleBtn = this.el.querySelector('.legend-toggle');
-  if (this.toggleLegend) {
-    legendToggleBtn.removeEventListener('click', this.toggleLegend);
+  if (!legendWrapper) {
+    return;
   }
-
   const html = Handlebars.templates['legend']();
   legendWrapper.innerHTML = html;
+};
 
-  legendToggleBtn = this.el.querySelector('.legend-toggle');
-  this.toggleLegend = () => {
-    legendWrapper.classList.toggle('open');
-  };
-  legendToggleBtn.addEventListener('click', this.toggleLegend);
-}, 0, false);
+Shareabouts.ActivityView.prototype.toggleLegend = function() {
+  const legendWrapper = this.el.querySelector('.legend-wrapper');
+  legendWrapper.classList.toggle('open');
+}
 
 var original_ActivityView_render = Shareabouts.ActivityView.prototype.render;
 Shareabouts.ActivityView.prototype.render = function() {
   // Use app.collection events to trigger an update. Since it's not a Marionette view,
   // we have to manage the event bindings ourselves.
-  if (this.boundUpdateLegendPlaceCounts) {
-    app.collection.off('add remove reset', this.boundUpdateLegendPlaceCounts);
+  if (this.boundRenderLegend) {
+    app.collection.off('add remove reset', this.boundRenderLegend);
+  }
+
+  if (this.handleLegendToggleClick) {
+    this.el.removeEventListener('click', this.handleLegendToggleClick);
   }
 
   const result = original_ActivityView_render.call(this, ...arguments);
 
-  this.boundUpdateLegendPlaceCounts = this.updateLegendPlaceCounts.bind(this);
-  app.collection.on('add remove reset', this.boundUpdateLegendPlaceCounts);
+  this.boundRenderLegend = _.debounce(this.renderLegend, 0, false).bind(this);
+  app.collection.on('add remove reset', this.boundRenderLegend);
+
+  this.handleLegendToggleClick = (evt) => {
+    if (evt.target.closest('.legend-toggle')) {
+      this.toggleLegend();
+    }
+  };
+  this.el.addEventListener('click', this.handleLegendToggleClick);
   return result;
 }
 
 // Update the current place type in the activity view.
 Shareabouts.ActivityView.prototype.setSelectedPlaceType = function(type) {
-  const isSpecific = type !== 'all';
-  const legendItems = this.el.querySelectorAll('.legend-item');
-  for (const item of legendItems) {
-    const isSelected = (!isSpecific || item.dataset.placeType === type);
-    item.href = isSelected && isSpecific ? '/filter/all' : `/filter/${item.dataset.placeType}`;
-    item.classList.toggle('deselected', !isSelected);
-  }
+  this.renderLegend();
 }
 
 var original_App_setLocationTypeFilter = Shareabouts.App.prototype.setLocationTypeFilter;
