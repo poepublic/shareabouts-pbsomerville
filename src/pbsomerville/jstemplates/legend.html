@@ -12,11 +12,11 @@
 
   <div class="legend place-type-legend">
     {{#each_place_type}}
-      <div class="legend-item {{type}}-legend-item" id="{{type}}-legend-entry" style="background-color: {{color}};">
+      <a href="/filter/{{type}}" data-internal class="legend-item {{type}}-legend-item" data-place-type="{{type}}" id="{{type}}-legend-entry" style="background-color: {{color}};">
         <img src="{{ STATIC_URL }}markers/{{type}}-nobg.png" role="presentation">
         <div class="legend-text" title="Idea type">{{label}}s</div>
         <div class="legend-count" title="Number of ideas">{{count_places type}}</div>
-      </div>
+      </a>
     {{/each_place_type}}
   </div>
 </div>

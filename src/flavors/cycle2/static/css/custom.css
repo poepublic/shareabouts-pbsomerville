@@ -613,33 +613,46 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
   display: block;
 }
 
-.legend-item {
+.place-type-legend .legend-item {
+  float: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
+  border: none;
+  color: var(--pbsomerville-dkblue);
 }
 
-.legend-item:first-child {
+.place-type-legend .legend-item.deselected {
+  opacity: 0.5;
+}
+
+.place-type-legend .legend-item:hover {
+  color: var(--pbsomerville-dkblue);
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.place-type-legend .legend-item:first-child {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
-.legend-item:last-child {
+.place-type-legend .legend-item:last-child {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
 
-.legend-item img {
+.place-type-legend .legend-item img {
   height: 2rem;
 }
 
-.legend-text {
+.place-type-legend .legend-text {
   flex-grow: 1;
 }
 
-.legend-count {
+.place-type-legend .legend-count {
   width: 2.5rem;
   text-align: center;
   font-weight: bold;
@@ -647,11 +660,11 @@ input[name="city_wide"][value="false"]:checked + .label-text { background-image:
   font-size: 0.9em;
 }
 
-.legend-count::before {
+.place-type-legend .legend-count::before {
   content: "(";
 }
 
-.legend-count::after {
+.place-type-legend .legend-count::after {
   content: ")";
 }
 

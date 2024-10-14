@@ -184,6 +184,24 @@ Shareabouts.ActivityView.prototype.render = function() {
   return result;
 }
 
+// Update the current place type in the activity view.
+Shareabouts.ActivityView.prototype.setSelectedPlaceType = function(type) {
+  const isSpecific = type !== 'all';
+  const legendItems = this.el.querySelectorAll('.legend-item');
+  for (const item of legendItems) {
+    const isSelected = (!isSpecific || item.dataset.placeType === type);
+    item.href = isSelected && isSpecific ? '/filter/all' : `/filter/${item.dataset.placeType}`;
+    item.classList.toggle('deselected', !isSelected);
+  }
+}
+
+var original_App_setLocationTypeFilter = Shareabouts.App.prototype.setLocationTypeFilter;
+Shareabouts.App.prototype.setLocationTypeFilter = function(type) {
+  const result = original_App_setLocationTypeFilter.call(this, ...arguments);
+  this.appView.activityView.setSelectedPlaceType(type);
+  return result;
+}
+
 // Add the current count of places to the place list view.
 var original_PlaceListView_ui = Shareabouts.PlaceListView.prototype.ui;
 Shareabouts.PlaceListView.prototype.ui = {
